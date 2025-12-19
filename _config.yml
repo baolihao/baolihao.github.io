@@ -279,7 +279,7 @@ defaults:
   # _portfolio
   - scope:
       path: ""
-      type: portfolio
+      type: Research
     values:
       layout: single
       author_profile: true
