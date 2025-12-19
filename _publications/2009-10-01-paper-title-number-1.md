@@ -1,10 +1,9 @@
 ---
 title: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
 collection: publications
-category: Under Review
+category: underreview
 permalink: /publication/2009-10-01-paper-title-number-1
 date: 2025-10-08
-venue: 'Under Review'
 paperurl: 'https://baolihao.github.io/files/PINNs.pdf'
 citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
 ---
