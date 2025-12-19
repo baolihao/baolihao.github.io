@@ -1,5 +1,5 @@
 ---
-title: "Paper Title Number 1"
+title: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
 collection: publications
 category: manuscripts
 permalink: /publication/2009-10-01-paper-title-number-1
