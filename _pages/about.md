@@ -7,9 +7,9 @@ redirect_from:
   - /about.html
 ---
 
-Welcome to my homepage! I am a fourth-year Ph.D. candidate in Applied Mathematics at the Illinois Institute of Technology, where I am advised by **Prof. Chun Liu** and **Prof. Ming Zhong** (University of Houston). My doctoral research focuses on mathematical modeling, analysis, and data-driven learning of complex dynamical systems, with particular emphasis on emergent behaviors in multi-agent and electrochemical systems. I received my B.Sc. in Computing Mathematics (First Class Honours) from City University of Hong Kong, with a minor in Computer Science. 
+Welcome to my homepage! I am a fourth-year Ph.D. candidate in Applied Mathematics at the Illinois Institute of Technology, where I am advised by **Prof. Chun Liu** and **Prof. Ming Zhong** (University of Houston). I received my B.Sc. in Computing Mathematics (First Class Honours) from City University of Hong Kong, with a minor in Computer Science. 
 
-My research focuses on mathematical modeling and scientific machine learning for complex systems, with an emphasis on PDE analysis, emergent behaviors in multi-agent dynamics, and stability-aware learning methods such as Physics-Informed Neural Networks.
+My research focuses on mathematical modeling and scientific machine learning for complex dynamical systems, with an emphasis on PDE analysis, emergent behaviors in multi-agent dynamics, and stability-aware learning methods such as Physics-Informed Neural Networks (PINNs).
 
 📧 bhao2@hawk.illinoistech.edu
 
