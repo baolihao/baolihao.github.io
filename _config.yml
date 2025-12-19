@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Baoli Hao"
+title                    : "Homepage"
 title_separator          : "-"
 name                     : &name "Baoli Hao"
 description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
@@ -24,7 +24,7 @@ repository               : "baolihao/baolihao.github.io"
 author:
   # Biographic information
   avatar           : "profile.jpeg"
-  name             : "Ph.D. Candidate in Applied Mathematics"
+  name             : "  Baoli Hao"
  # pronouns         : # example: "she/her"  
  # bio              : ""
  # location         : "Earth"
