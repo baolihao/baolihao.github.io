@@ -12,6 +12,7 @@ Welcome to my homepage! I am a fourth-year Ph.D. candidate in Applied Mathematic
 My research focuses on mathematical modeling and scientific machine learning for complex systems, with an emphasis on PDE analysis, emergent behaviors in multi-agent dynamics, and stability-aware learning methods such as Physics-Informed Neural Networks.
 
 📧 bhao2@hawk.illinoistech.edu
+
 📍 10 W 35th St, Chicago, IL, United States
 
 A data-driven personal website
