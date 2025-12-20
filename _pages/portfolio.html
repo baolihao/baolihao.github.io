@@ -19,7 +19,7 @@ identifiability analysis, and convergence guarantees. A major outcome of this wo
 framework that enables the recovery of interaction laws governing emergent patterns such as clustering, alignment, and phase transitions.</p>
 
 <h2>2. Crime Pattern Formation and Predictive Policing</h2>
-<img src="/images/CHI.gif" width="210" align="right">
+<img src="/images/CHI.gif" width="420" align="right">
 <p style="text-align: justify;">This research examines how spatio-temporal crime patterns emerge from individual-level interactions, with a focus on the 
 formation and evolution of crime hotspots. Building on PDE-based burglary models originally introduced by 
 <a href = "https://www.math.ucla.edu/~bertozzi/papers/M3AS-final.pdf">Bertozzi and collaborators</a>, 
@@ -31,3 +31,18 @@ This approach enables simulations with heterogeneous parameters and complex city
 including Chicago, and is validated against agent-based results. Ongoing work extends
 the framework to incorporate police response, supporting predictive analytics and decision support for urban public safety.
 Please see my <a href="/publications/">Publications</a> page for prints of all these works and more.</p>
+
+<h2>3. Physics-Informed Neural Networks for PDEs</h2>
+<p style="text-align: justify;">We developed data-driven solvers based on Physics-Informed Neural Networks (PINNs) that explicitly 
+  enforce physical constraints to mitigate ill-conditioning and spectral bias in stiff, 
+  time-dependent partial differential equations. The work systematically investigates two critical 
+  training mechanisms—hard enforcement of initial and boundary conditions, and adaptive loss weighting—to address 
+  the instability and inefficiency commonly encountered in multiscale and rapidly evolving dynamics.</p>
+
+<p style="text-align: justify;"> We conducted a large-scale ablation study across representative stiff PDE systems arising
+  in materials science and mathematical biology, including Allen–Cahn, Cahn–Hilliard, and Gray–Scott equations, etc. 
+  The study quantifies how precise constraint enforcement and dynamically balanced loss terms improve training
+  robustness, accuracy, and convergence efficiency, particularly in regimes characterized by sharp gradients and disparate 
+  temporal scales. Extensive numerical benchmarks demonstrate that the proposed training strategies significantly enhance 
+  PINN performance for stiff and chaotic dynamics,  offering practical guidance for reliable physics-constrained 
+  learning in challenging PDE settings. Please see my <a href="/publications/">Publications</a> page for prints of all these works and more.</p>
