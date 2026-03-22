@@ -41,25 +41,25 @@ Classical interaction models assume all-to-all coupling, but in many real system
   defined by adaptive criteria such as KNN, Voronoi tessellations, or density-weighted neighborhoods. We develop a unified data-driven 
   framework that simultaneously learns the interaction kernel and identifies the appropriate neighborhood structure, encompassing models with 
   1/N, 1/&phi;, and 1/&chi; normalizations. The framework handles both deterministic and stochastic dynamics, including Langevin, 
-  self-propelled particle, and Vicsek-type systems, with validation on simulated and real-world datasets.
+  self-propelled particle, and Vicsek-type systems, with validation on <b>simulated</b> and <b>real-world datasets</b>.
 </p>
 
 <h2>2. Mathematical Modeling of Urban Crime Dynamics</h2>
 <img src="/images/CHI-speed.gif" width="420" align="left">
 <p style="text-align: justify;">This research investigates how spatio-temporal crime patterns emerge from individual-level 
   interactions, with a focus on the formation, persistence, and suppression of crime hotspots. Building on nonlinear 
-  PDE models for residential burglary derived from agent-based dynamics via the mean-field limit, we study their behavior in realistic 
+  PDE models for residential burglary derived from <b>agent-based dynamics</b> via the mean-field limit, we study their behavior in realistic 
   urban settings with heterogeneous parameters and complex geometries.</p>
 
 <p style="text-align: justify;">We developed a finite element framework enforcing natural boundary conditions
-  with an efficient iterative decoupled scheme, validated against agent-based simulations on the city of Chicago. 
+  with an efficient scheme, validated against agent-based simulations on the city of Chicago. 
   The framework captures key phenomena including hotspot nucleation under weak neighborhood effects, spatial heterogeneity 
   driven by infrastructure (e.g., highways), and the quantitative dependence of hotspot size and number on model parameters. 
   Published in <a href="https://www.worldscientific.com/doi/abs/10.1142/S0218202526500193"><i>Mathematical Models and Methods in 
     Applied Sciences</i></a> with <a href="https://github.com/baolihao/UrbanCrime-Sim">open-source code</a>.</p>
 
 <p style="text-align: justify;">Ongoing work extends this framework to a coupled four-variable PDE system incorporating adaptive
-  law enforcement dynamics. In this model, police density evolves via a biased random walk toward high-crime regions, 
+  <b>law enforcement dynamics</b>. In this model, police density evolves via a biased random walk toward high-crime regions, 
   driven by a time-delayed crime signal.
 
 Linear stability analysis reveals that the coupling between crime and enforcement induces emergent oscillatory dynamics 
@@ -72,7 +72,7 @@ Linear stability analysis reveals that the coupling between crime and enforcemen
 </div>
 <p style="text-align: justify;">We developed data-driven solvers based on <b>Physics-Informed Neural Networks (PINNs) </b> that explicitly 
   enforce physical constraints to mitigate ill-conditioning and spectral bias in stiff, 
-  time-dependent partial differential equations. The work systematically investigates hard enforcement of initial conditions and adaptive loss weighting to address 
+  time-dependent partial differential equations. The work systematically investigates <b> hard enforcement of initial conditions</b> and adaptive loss weighting to address 
   the <b>instability </b>  commonly encountered in multiscale and rapidly evolving dynamics.</p>
 
 <p style="text-align: justify;"> We conducted a large-scale ablation study across representative stiff PDE systems arising
