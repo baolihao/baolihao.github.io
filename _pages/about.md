@@ -11,7 +11,7 @@ redirect_from:
   <tr style="border:none;">
     <td style="border:none; white-space:nowrap; vertical-align:top; padding:8px 20px 8px 0; width:120px;"><strong>About</strong></td>
     <td style="border:none; vertical-align:top; padding:8px 0;">
-      Welcome to my homepage! I am a fifth-year Ph.D. candidate in <strong>Applied Mathematics</strong> at the <a href="https://www.iit.edu/applied-math">Illinois Institute of Technology</a>, where I am advised by <a href="https://sites.google.com/view/chunliu">Prof. Chun Liu</a> and <a href="https://mingjzhong.github.io/">Prof. Ming Zhong</a> (University of Houston). I received my B.Sc. in <strong>Computing Mathematics</strong> (First Class Honours) from <a href="https://www.cityu.edu.hk/ma/">City University of Hong Kong</a>, with a minor in <strong>Computer Science</strong>.
+      Welcome to my homepage! I am a fourth-year Ph.D. candidate in <strong>Applied Mathematics</strong> at the <a href="https://www.iit.edu/applied-math">Illinois Institute of Technology</a>, where I am advised by <a href="https://sites.google.com/view/chunliu">Prof. Chun Liu</a> and <a href="https://mingjzhong.github.io/">Prof. Ming Zhong</a> (University of Houston). I received my B.Sc. in <strong>Computing Mathematics</strong> (First Class Honours) from <a href="https://www.cityu.edu.hk/ma/">City University of Hong Kong</a>, with a minor in <strong>Computer Science</strong>.
     </td>
   </tr>
   <tr style="border:none;">
@@ -21,18 +21,12 @@ redirect_from:
     </td>
   </tr>
   <tr style="border:none;">
-    <td style="border:none; white-space:nowrap; vertical-align:top; padding:8px 20px 8px 0;"><strong>Job Market</strong></td>
-    <td style="border:none; vertical-align:top; padding:8px 0;">
-      I am on the <strong>2026–2027 academic job market</strong>, seeking positions in applied mathematics, computational science, or related areas. Please feel free to reach out via email.
-    </td>
-  </tr>
-  <tr style="border:none;">
     <td style="border:none; white-space:nowrap; vertical-align:top; padding:8px 20px 8px 0;"><strong>News</strong></td>
     <td style="border:none; vertical-align:top; padding:8px 0;">
       <table style="width:100%; border:none; border-collapse:collapse;">
         <tr style="border:none;">
           <td style="border:none; white-space:nowrap; vertical-align:top; padding:2px 12px 2px 0; color:grey;">Mar 2026</td>
-          <td style="border:none; vertical-align:top; padding:2px 0;">Paper on <a href="link">finite element simulation of urban crime dynamics</a> published in <em>Mathematical Models and Methods in Applied Sciences</em> (M3AS).</td>
+          <td style="border:none; vertical-align:top; padding:2px 0;">Paper on <a href="https://www.worldscientific.com/doi/abs/10.1142/S0218202526500193">finite element simulation of urban crime dynamics</a> published in <em>Mathematical Models and Methods in Applied Sciences</em> (M3AS).</td>
         </tr>
         <tr style="border:none;">
           <td style="border:none; white-space:nowrap; vertical-align:top; padding:2px 12px 2px 0; color:grey;">2025</td>
