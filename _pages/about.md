@@ -9,7 +9,7 @@ redirect_from:
 
 <style>
   .page__content { text-align: justify; }
-  .page__content a { color: #2a6496; }
+  .page__content a { color: #4682B4; }
   .page__content a:hover { color: #1a5276; }
 </style>
 
