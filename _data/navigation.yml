@@ -18,7 +18,7 @@ main:
   #   url: /year-archive/
   - title: "Services"
     url: /services/    
-    - title: "Teaching"
+  - title: "Teaching"
     url: /teaching/    
     
   - title: "CV"
