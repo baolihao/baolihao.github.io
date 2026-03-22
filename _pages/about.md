@@ -14,5 +14,5 @@ My research develops mathematical and computational methods for understanding co
 
 ## Recent News
 
-- **Mar 2026** — Paper on [finite element simulation of urban crime dynamics](https://www.worldscientific.com/doi/abs/10.1142/S0218202526500193) published in *Mathematical Models and Methods in Applied Sciences* (M3AS).
-- **2025** — Paper on [phase field model for micropolar fluids](https://arxiv.org/abs/2504.21258) accepted at *Interfaces and Free Boundaries*.
+- **Mar. 2026** — Paper on [finite element simulation of urban crime dynamics](https://www.worldscientific.com/doi/abs/10.1142/S0218202526500193) published in *Mathematical Models and Methods in Applied Sciences* (M3AS).
+- **Dec. 2025** — Paper on [phase field model for micropolar fluids](https://arxiv.org/abs/2504.21258) accepted at *Interfaces and Free Boundaries*.
