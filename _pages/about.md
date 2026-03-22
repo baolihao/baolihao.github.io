@@ -19,7 +19,7 @@ My research develops mathematical and computational methods for understanding co
 
 ## Recent News
 
-<table style="width:120%; border:none; border-collapse:collapse;">
+<table style="width:100%; border:none; border-collapse:collapse;">
   <tr style="border:none;">
     <td style="border:none; white-space:nowrap; vertical-align:top; padding:4px 16px 4px 0; color:grey;"><strong>Mar 2026</strong></td>
     <td style="border:none; vertical-align:top; padding:4px 0; text-align:justify;">Paper on <a href="https://www.worldscientific.com/doi/abs/10.1142/S0218202526500193">finite element simulation of urban crime dynamics</a> published in <em>Mathematical Models and Methods in Applied Sciences (M3AS)</em>.</td>
