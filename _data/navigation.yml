@@ -10,10 +10,6 @@
 main:
   - title: "Publications"
     url: /publications/
-
-
-  # - title: "Teaching"
-  #   url: /teaching/    
     
   - title: "Research"
     url: /research/
@@ -22,6 +18,8 @@ main:
   #   url: /year-archive/
   - title: "Services"
     url: /services/    
+    - title: "Teaching"
+    url: /teaching/    
     
   - title: "CV"
     url: /files/Baoli_CV.pdf
