@@ -10,7 +10,7 @@ redirect_from:
 <style>
   .page__content { text-align: justify; }
   .page__content a { color: #4682B4; }
-  .page__content a:hover { color: #1a5276; }
+  .page__content a:hover { color: #2a5f8a; }
 </style>
 
 Welcome to my homepage! I am a fourth-year Ph.D. candidate in **Applied Mathematics** at the [Illinois Institute of Technology](https://www.iit.edu/applied-math), where I am advised by [Prof. Chun Liu](https://sites.google.com/view/chunliu) and [Prof. Ming Zhong](https://mingjzhong.github.io/) (University of Houston). I received my B.Sc. in **Computing Mathematics** (First Class Honours) from [City University of Hong Kong](https://www.cityu.edu.hk/ma/), with a minor in **Computer Science**.
