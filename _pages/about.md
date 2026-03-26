@@ -31,5 +31,5 @@ My research develops mathematical and computational methods for understanding co
 </table>
 
 <div style="margin-top:30px; text-align:center;">
- <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=Gokkf0g2sA9MxofylS7qdceGojag-fmx7Pt4_iATl5o"></script>
+ <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=Dt9l03ppBcMgtROeOEmeuypZX8rvcW21lC22wSskX-k&cl=ffffff&w=a"></script>
 </div>
