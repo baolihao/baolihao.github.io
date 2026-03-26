@@ -31,7 +31,5 @@ My research develops mathematical and computational methods for understanding co
 </table>
 
 <div style="margin-top:30px;">
-  <script type="text/javascript" id="clustrmaps" 
-    src="//clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=YOUR_UNIQUE_ID&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff">
-  </script>
+ <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=Gokkf0g2sA9MxofylS7qdceGojag-fmx7Pt4_iATl5o"></script>
 </div>
