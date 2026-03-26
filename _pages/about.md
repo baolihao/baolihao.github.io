@@ -29,3 +29,9 @@ My research develops mathematical and computational methods for understanding co
     <td style="border:none; vertical-align:top; padding:4px 0; text-align:justify;">Paper on <a href="https://arxiv.org/abs/2504.21258">phase field model for micropolar fluids</a> accepted at <em>Interfaces and Free Boundaries</em>.</td>
   </tr>
 </table>
+
+<div style="margin-top:30px;">
+  <script type="text/javascript" id="clustrmaps" 
+    src="//clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=YOUR_UNIQUE_ID&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff">
+  </script>
+</div>
