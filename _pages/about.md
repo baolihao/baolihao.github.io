@@ -30,6 +30,6 @@ My research develops mathematical and computational methods for understanding co
   </tr>
 </table>
 
-<div style="margin-top:30px;">
+<div style="margin-top:30px; text-align:center;">
  <script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=Gokkf0g2sA9MxofylS7qdceGojag-fmx7Pt4_iATl5o"></script>
 </div>
