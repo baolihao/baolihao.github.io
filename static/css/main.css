@@ -162,14 +162,20 @@ body {
     minmax(0, 760px)
     300px;
 
+  grid-template-areas:
+    "copy photo"
+    "socials photo";
+
   justify-content: space-between;
 
   column-gap: 80px;
+  row-gap: 0;
 
   align-items: stretch;
 }
 
 .hero-copy {
+  grid-area: copy;
   min-width: 0;
 }
 
@@ -218,8 +224,9 @@ body {
 
 
 /* ---------- Links ---------- */
-
 .hero-socials {
+  grid-area: socials;
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -269,6 +276,7 @@ body {
 /* ---------- Portrait ---------- */
 
 .hero-photo {
+  grid-area: photo;
   width: 300px;
 
   align-self: stretch;
@@ -2333,40 +2341,10 @@ footer {
 
 
   /* Correct class: hero-content-grid */
-  .hero-content-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    row-gap: 26px;
-    column-gap: 0;
-    align-items: start;
-  }
+  
 
 
   /* Portrait */
-  .hero-photo {
-    order: -1;
-
-    width: 180px;
-    height: auto;
-
-    justify-self: start;
-    align-self: auto;
-
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .hero-photo img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    object-fit: cover;
-    object-position: center;
-
-    border-radius: 2px;
-  }
 
 
   /* Text */
@@ -2392,9 +2370,7 @@ footer {
 
 
   /* Social links */
-  .hero-socials {
-    gap: 10px 18px;
-  }
+  
 
   .social-separator {
     display: none;
@@ -2421,6 +2397,123 @@ footer {
   .research-direction {
     width: 100%;
     min-width: 0;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .project-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .project-content h4 {
+    text-align: center;
+  }
+
+  .project-content p {
+    text-align: center;
+    max-width: 310px;
+  }
+
+  .project-link {
+    text-align: center;
+  }
+
+}
+
+
+/* ============================================================
+   FINAL MOBILE HERO
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+  .hero-content-grid {
+    display: grid;
+
+    grid-template-columns:
+      165px
+      minmax(0, 1fr);
+
+    grid-template-areas:
+      "photo socials"
+      "copy  copy";
+
+    column-gap: 24px;
+    row-gap: 28px;
+
+    align-items: center;
+  }
+
+
+  /* Portrait */
+
+  .hero-photo {
+    grid-area: photo;
+
+    width: 165px;
+    height: auto;
+
+    padding: 0;
+
+    justify-self: start;
+    align-self: center;
+  }
+
+  .hero-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2px;
+  }
+
+
+  /* Social links */
+
+  .hero-socials {
+    grid-area: socials;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+
+    gap: 10px;
+
+    margin: 0;
+  }
+
+  .hero-socials a {
+    font-size: 14px;
+  }
+
+  .social-separator {
+    display: none;
+  }
+
+
+  /* Biography + research statement */
+
+  .hero-copy {
+    grid-area: copy;
+    min-width: 0;
+  }
+
+  .bio {
+    text-align: left;
+    hyphens: none;
+  }
+
+  .research-statement {
+    text-align: left;
+    hyphens: none;
   }
 
 }
