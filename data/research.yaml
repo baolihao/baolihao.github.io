@@ -186,7 +186,7 @@ programs:
          - label: "Slides"
            url: "/files/talks/siam-annual-2026-slides.pdf"
          - label: "Poster"
-           url: "/files/talks/crime-poster.pdf"
+           url: "/files/talks/crime_teposter.pdf"
 
 
       - title: "Feedback & Intervention Dynamics"
@@ -203,7 +203,7 @@ programs:
          - label: "Slides"
            url: "/files/talks/siam-annual-2026-slides.pdf"
          - label: "Poster"
-           url: "/files/talks/crime-poster.pdf"
+           url: "/files/talks/crime_poster.pdf"
 
       - title: "Discovering Hidden Urban Dynamics"
         text: >
