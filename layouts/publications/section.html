@@ -29,7 +29,9 @@
     <a class="site-name" href="/">
       Baoli Hao
     </a>
-
+  <button class="nav-toggle" aria-label="Open navigation">
+    ☰
+  </button>
 
     <nav class="nav-links">
 
@@ -363,6 +365,15 @@
   </div>
 </footer>
 
+
+<script>
+  const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+  });
+</script>
 
 </body>
 </html>
