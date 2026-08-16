@@ -63,7 +63,7 @@ programs:
           Voronoi, density-dependent interaction rules, etc., with the goal of
           identifying interaction structure and interaction kernels jointly.
 
-      - title: "Discovering Gravitational Structure"
+      - title: "Discovering Explainable Physics"
         text: >
           Using Solar-System ephemerides as a testbed, we study whether
           interpretable physical laws can emerge directly from
