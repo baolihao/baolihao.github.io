@@ -19,9 +19,9 @@ programs:
     title: "Learning Collective Dynamics & Interacting Particle Systems"
 
     question: >
-      " How can hidden interaction mechanisms be inferred from collective
+      How can hidden interaction mechanisms be inferred from collective
       behavior when observations, interaction structure, or physical laws
-      are only partially known?  "
+      are only partially known?  
     
     image:
     src: "/images/research/collective.gif"
