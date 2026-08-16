@@ -2175,10 +2175,10 @@ footer {
     gap: 18px;
   }
 
-    /* .research-direction {
+    .research-direction {
     width: 100%;
     padding: 20px 20px 16px;
-  } */
+  }
 
 
 }
@@ -2402,6 +2402,25 @@ footer {
 
   .hero-socials a {
     font-size: 14.5px;
+  }
+
+}
+
+
+@media (max-width: 820px) {
+
+  .research-directions,
+  .research-directions.directions-2,
+  .research-directions.directions-3 {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .research-direction {
+    width: 100%;
+    min-width: 0;
   }
 
 }
