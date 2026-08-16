@@ -65,11 +65,16 @@ programs:
 
       - title: "Discovering Explainable Physics"
         text: >
-          Using Solar-System ephemerides as a testbed, we study whether
-          interpretable physical laws can emerge directly from
-          trajectory observations without imposing the governing law
-          beforehand, including source-dependent interactions and
-          missing-source inference.
+          We develop a family of learning methods that infer 
+          interpretable gravitational structure directly
+           from NASA JPL Horizons ephemerides with minimal 
+           prior assumptions. The learned models aim for 
+           both physical explainability and 
+           long-term predictive precision, enabling 
+           inference of quantities such as source masses 
+           or unseen perturbers and reaching the accuracy 
+           needed to probe subtle effects such as 
+           perihelion precession.
 
 
   - number: "02"
