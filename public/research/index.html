@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research | Baoli Hao</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+
+
+
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a class="site-name" href="/">
+      Baoli Hao
+    </a>
+
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a class="active" href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/activities/">Activities</a>
+      <a
+  href="/files/CV/Baoli-CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  CV
+</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+
+
+<section class="research-page">
+
+  <div class="container">
+
+
+    
+
+  <header class="research-intro">
+
+  <h1>
+    Research
+  </h1>
+
+  <div class="research-intro-grid">
+
+    
+    <div class="research-intro-text">
+
+      <p>
+        My research develops mathematical and computational methods for <strong>modeling complex dynamical systems and learning their hidden mechanisms from data</strong>. A recurring theme is to exploit mathematical and physical structure, such as interaction kernels and variational principles, to make data-driven inference and scientific computation stable, interpretable, and physically meaningful. My work connects <strong>scientific machine learning and inverse problems</strong> with <strong>multiscale modeling and nonlinear PDEs</strong>, with applications to collective dynamics, ion transport, urban dynamics, and physics-informed computing.
+      </p>
+
+    </div>
+
+
+    
+    <div class="research-intro-figure">
+
+      <img
+        src="/images/research/research-overview.png"
+        alt="Overview of research on complex dynamical systems"
+      >
+
+    </div>
+
+  </div>
+
+</header>
+    
+
+    <nav
+      class="research-jump"
+      aria-label="Research areas"
+    >
+
+      
+
+        <a href="#collective-dynamics">
+          <span>01</span>
+          Learning Collective Dynamics &amp; Interacting Particle Systems
+        </a>
+
+      
+
+        <a href="#ion-transport">
+          <span>02</span>
+          Ion Transport &amp; PNP Equations
+        </a>
+
+      
+
+        <a href="#urban-dynamics">
+          <span>03</span>
+          Multiscale Urban Dynamics
+        </a>
+
+      
+
+        <a href="#physics-informed-learning">
+          <span>04</span>
+          PINNs for Stiff Dynamics
+        </a>
+
+      
+
+    </nav>
+
+
+
+    
+
+    <div class="research-programs">
+
+
+      
+
+
+      <article
+        class="research-program"
+        id="collective-dynamics"
+      >
+
+
+        
+
+        <header class="research-program-heading">
+
+
+          <div class="research-number">
+            01
+          </div>
+
+
+          <div class="research-heading-content">
+
+            <h2>
+              Learning Collective Dynamics &amp; Interacting Particle Systems
+            </h2>
+
+            <p class="research-question">
+              How can hidden interaction mechanisms be inferred from collective behavior when observations, interaction structure, or physical laws are only partially known?
+
+            </p>
+
+          </div>
+
+
+        </header>
+
+        
+
+
+
+        
+
+        <div class="research-program-body">
+
+
+          
+
+       <div class="research-program-main has-figure figure-right">
+
+  
+  
+
+
+  
+  <div class="research-narrative">
+
+    
+      <p>
+        My work in collective dynamics studies both the forward and inverse relationship between microscopic interactions and emergent macroscopic behavior. <a href="https://doi.org/10.1103/PhysRevE.108.064214">Earlier work on swarmalators</a>
+examined how competing
+attractive and repulsive interactions generate distinct collective states through modeling and analysis. This naturally motivates the inverse question: <strong>what can observed collective behavior reveal about the interactions that produced it?</strong>
+      </p>
+    
+      <p>
+        Classical interaction-learning methods typically assume sufficiently rich trajectory data and a prescribed interaction architecture. My current work explores what remains identifiable in more <strong>ill-posed</strong> settings,  including inference from highly limited observations, unknown interaction neighborhoods, and observational data for which even the governing physical law is not supplied beforehand.
+      </p>
+    
+
+  </div>
+
+
+  
+  
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/collective.gif"
+        alt="Collective dynamics and interacting particle systems"
+      >
+    </figure>
+
+  
+
+
+  
+  
+
+</div>
+
+          
+
+
+
+
+
+<div class="research-directions directions-3">
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Learning from Limited Observations
+        </h3>
+
+        <p>
+          We study how interaction kernels can be recovered when  only collective steady states are observed.  Such data make system identification highly degenerate,  and we show that identifiability is governed by the distribution
+of observed configurations together with the structural
+information encoded in the patterns themselves.
+        </p>
+
+      </div>
+
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Learning Interaction Topology
+        </h3>
+
+        <p>
+          We develop methods that ask not only <em>how agents interact</em>, but also <em>who interacts with whom</em>. This includes metric, nearest-neighbor, Voronoi, density-dependent interaction rules, etc., with the goal of identifying interaction structure and interaction kernels jointly.
+        </p>
+
+      </div>
+
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Discovering Gravitational Structure
+        </h3>
+
+        <p>
+          Using Solar-System ephemerides as a testbed, we study whether interpretable physical laws can emerge directly from trajectory observations without imposing the governing law beforehand, including source-dependent interactions and missing-source inference.
+        </p>
+
+      </div>
+
+
+      
+
+    </div>
+
+  
+
+</div>
+
+
+
+</div>
+
+
+
+
+      </article>
+
+
+      
+
+
+      <article
+        class="research-program"
+        id="ion-transport"
+      >
+
+
+        
+
+        <header class="research-program-heading">
+
+
+          <div class="research-number">
+            02
+          </div>
+
+
+          <div class="research-heading-content">
+
+            <h2>
+              Ion Transport &amp; PNP Equations
+            </h2>
+
+            <p class="research-question">
+              How can thermodynamically consistent models of ion transport  be derived, analyzed, and inferred from data by exploiting their  energetic and variational structure?
+
+            </p>
+
+          </div>
+
+
+        </header>
+
+        
+
+
+
+        
+
+        <div class="research-program-body">
+
+
+          
+
+       <div class="research-program-main has-figure figure-left">
+
+  
+  
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/PNP.jpg"
+        alt="Ion transport and Poisson–Nernst–Planck dynamics"
+      >
+    </figure>
+
+  
+
+
+  
+  <div class="research-narrative">
+
+    
+      <p>
+        My work on ion transport begins with the mathematical structure  of nonequilibrium transport models.  In concentrated ionic systems, short-range steric interactions  and friction between species introduce mechanisms absent  from classical dilute Poisson–Nernst–Planck theory.  Using energetic variational principles, we study how  conservative interactions enter the free energy while dissipative mechanisms modify transport  and mobility, and how this structure governs
+finite-energy solutions and long-time relaxation giving rise to <strong>cross-diffusion</strong>.
+      </p>
+    
+      <p>
+        This forward understanding motivates a complementary inverse question: <strong>what constitutive physics is actually supported by concentration data?</strong> Rather than fixing a local constitutive law in advance, my current work studies how observations distinguish effective local models from genuinely nonlocal interactions and which components of the underlying constitutive physics are identifiable.
+      </p>
+    
+
+  </div>
+
+
+  
+  
+
+
+  
+  
+
+</div>
+
+          
+
+
+
+
+
+<div class="research-directions directions-2">
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Modeling &amp; Analysis of Cross-Diffusion PNP Systems
+        </h3>
+
+        <p>
+          We develop thermodynamically consistent PNP-type models  for crowded ionic systems, where steric interactions  modify the free energy while interspecies drag modifies  dissipation and transport. These mechanisms generate  nonlinear cross-diffusion through distinct energetic  and dissipative pathways. We analyze the resulting  PDE systems with emphasis on global finite-energy solutions,  entropy dissipation, and long-time behavior.
+        </p>
+
+      </div>
+
+
+      
+
+        <div class="research-direction-links">
+
+          
+
+            
+
+              <a
+                href="https://arxiv.org/abs/2607.21742"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paper
+              </a>
+
+            
+
+          
+
+            
+
+          
+
+            
+
+          
+
+        </div>
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Learning &amp; Identifying Constitutive Physics
+        </h3>
+
+        <p>
+          We study structure-preserving inverse problems for identifying constitutive
+physics from concentration data, including when nonlocal steric interactions
+admit effective local closures and when genuinely nonlocal structure remains
+identifiable. More broadly, we investigate learnable components of free energy
+and dissipation, such as steric interactions, and transport mechanisms, while preserving the underlying gradient-flow  and Onsager structure and understanding  the mathematical limits of their identifiability.
+        </p>
+
+      </div>
+
+
+      
+
+    </div>
+
+  
+
+</div>
+
+
+
+</div>
+
+
+
+
+      </article>
+
+
+      
+
+
+      <article
+        class="research-program"
+        id="urban-dynamics"
+      >
+
+
+        
+
+        <header class="research-program-heading">
+
+
+          <div class="research-number">
+            03
+          </div>
+
+
+          <div class="research-heading-content">
+
+            <h2>
+              Multiscale Urban Dynamics
+            </h2>
+
+            <p class="research-question">
+              How do individual-level behaviors give  rise to collective urban crime patterns across scales,  and what hidden mechanisms can be identified from observed data?
+
+            </p>
+
+          </div>
+
+
+        </header>
+
+        
+
+
+
+        
+
+        <div class="research-program-body">
+
+
+          
+
+       <div class="research-program-main has-figure figure-right">
+
+  
+  
+
+
+  
+  <div class="research-narrative">
+
+    
+      <p>
+        My work on urban dynamics develops multiscale mathematical models that connect individual behavior with emergent spatio-temporal patterns at the population level. Starting from agent-based descriptions of residential burglary, we study continuum PDE models obtained through mean-field limits and develop computational methods for simulating these systems in heterogeneous and realistic urban environments.
+      </p>
+    
+      <p>
+        A complementary direction reverses this perspective:  <strong>what hidden urban crime mechanisms can be identified  from observed dynamics?</strong> My current work develops  <strong>PDE-constrained optimization</strong> and <strong>weak-form finite-element inverse methods</strong> for identifying hidden dynamics and environmental structure.  A particular focus is inference from realistically  observable crime intensity, rather than  direct observations of the underlying model states.
+      </p>
+    
+
+  </div>
+
+
+  
+  
+
+
+  
+  
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/CHI-speed.gif"
+        alt="Spatiotemporal urban crime dynamics in Chicago"
+      >
+    </figure>
+
+  
+
+</div>
+
+          
+
+
+
+
+
+<div class="research-directions directions-3">
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+           Realistic Scientific Computing
+        </h3>
+
+        <p>
+          We connect probabilistic agent-level descriptions to  nonlinear continuum models and develop robust  finite-element methods for spatially heterogeneous  systems with natural boundary conditions and  realistic urban geometries.
+        </p>
+
+      </div>
+
+
+      
+
+        <div class="research-direction-links">
+
+          
+
+            
+
+              <a
+                href="/files/publications/urban-crime-fem-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paper
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="https://github.com/baolihao/UrbanCrime-Sim"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="/files/talks/siam-annual-2026-slides.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Slides
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="/files/talks/crime-poster.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poster
+              </a>
+
+            
+
+          
+
+        </div>
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Feedback &amp; Intervention Dynamics
+        </h3>
+
+        <p>
+          We study how adaptive response and delayed information affect the stability and spatio-temporal behavior. In particular, delayed response can destabilize otherwise stable states and generate oscillatory, moving, splitting, and merging hotspot patterns.
+        </p>
+
+      </div>
+
+
+      
+
+        <div class="research-direction-links">
+
+          
+
+            
+
+              <a
+                href="https://arxiv.org/abs/2605.17709"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paper
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="https://github.com/baolihao/UrbanCrime-Sim"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="/files/talks/siam-annual-2026-slides.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Slides
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="/files/talks/crime-poster.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poster
+              </a>
+
+            
+
+          
+
+        </div>
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Discovering Hidden Urban Dynamics
+        </h3>
+
+        <p>
+          We develop PDE-constrained optimization and weak-form finite-element inverse methods for  hidden dynamics, with  focus on indirect observations, realistic crime data, and the mathematical limits of identifiability.
+        </p>
+
+      </div>
+
+
+      
+
+    </div>
+
+  
+
+</div>
+
+
+
+</div>
+
+
+
+
+      </article>
+
+
+      
+
+
+      <article
+        class="research-program"
+        id="physics-informed-learning"
+      >
+
+
+        
+
+        <header class="research-program-heading">
+
+
+          <div class="research-number">
+            04
+          </div>
+
+
+          <div class="research-heading-content">
+
+            <h2>
+              PINNs for Stiff Dynamics
+            </h2>
+
+            <p class="research-question">
+              How can the mathematical and physical structure of a dynamical system be built into physics-informed neural netowrks to improve stability, accuracy, and differentiability?
+
+            </p>
+
+          </div>
+
+
+        </header>
+
+        
+
+  <figure class="research-overview-figure">
+    <img
+      src="/images/research/sciml.png"
+      alt="Structure-aware physics-informed learning"
+    >
+  </figure>
+
+
+
+
+
+        
+
+        <div class="research-program-body">
+
+
+          
+
+       <div class="research-program-main">
+
+  
+  
+
+
+  
+  <div class="research-narrative">
+
+    
+      <p>
+        My work on PINNs studies how known mathematical structure can be incorporated directly into neural representations for challenging dynamical systems. Rather than treating governing equations, initial conditions, and dynamical interfaces solely as competing penalty terms, we develop representations that enforce essential structure by construction. The broader goal is to understand how the architecture of physics-informed learning should reflect the mathematical organization of the underlying dynamical problem, improving not only prediction accuracy but also conditioning, stability, and the scientific usefulness of the learned solution map.
+      </p>
+    
+
+  </div>
+
+
+  
+  
+
+
+  
+  
+
+</div>
+
+          
+
+
+
+
+
+<div class="research-directions directions-2">
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Stable Learning for Stiff Dynamics
+        </h3>
+
+        <p>
+          We study why physics-informed neural networks become difficult to train for stiff time-dependent PDEs and how exact enforcement of initial conditions can stabilize training, reduce spectral bias, and introduce an implicit time-marching structure.
+        </p>
+
+      </div>
+
+
+      
+
+        <div class="research-direction-links">
+
+          
+
+            
+
+              <a
+                href="files/publications/stiff-pinns-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paper
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="https://github.com/baolihao/hard-constrained-pinns"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Code
+              </a>
+
+            
+
+          
+
+            
+
+              <a
+                href="/files/talks/stiff-pinns-2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Slides
+              </a>
+
+            
+
+          
+
+            
+
+          
+
+        </div>
+
+      
+
+    </div>
+
+  
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          Event-Structured Learning of  Critical Dynamics
+        </h3>
+
+        <p>
+          For hybrid dynamical systems, we develop neural surrogates whose
+representations follow known physical phases and enforce exact state
+chaining across input-dependent event interfaces. The resulting
+differentiable trajectory families enable the extraction of critical
+transition boundaries and sensitivities, turning physics-informed
+surrogates into tools for studying scientifically meaningful quantities
+of interest.
+        </p>
+
+      </div>
+
+
+      
+
+        <div class="research-direction-links">
+
+          
+
+            
+
+              <a
+                href="https://arxiv.org/abs/2605.17709"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Paper
+              </a>
+
+            
+
+          
+
+            
+
+          
+
+            
+
+          
+
+            
+
+          
+
+        </div>
+
+      
+
+    </div>
+
+  
+
+</div>
+
+
+
+</div>
+
+
+
+
+      </article>
+
+
+      
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+
+
+<footer>
+
+  <div class="container">
+    © 2026 Baoli Hao
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>

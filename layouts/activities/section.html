@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Activities | Baoli Hao</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a class="site-name" href="/">
+      Baoli Hao
+    </a>
+
+    <nav class="nav-links">
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/research/">
+        Research
+      </a>
+
+      <a href="/publications/">
+        Publications
+      </a>
+
+      <a href="/teaching/">
+        Teaching
+      </a>
+
+      <a
+        class="active"
+        href="/activities/"
+      >
+        Activities
+      </a>
+
+      <a
+  href="/files/CV/Baoli-CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  CV
+</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     ACTIVITIES
+     ========================================================= -->
+
+<main class="activities-page">
+
+  <div class="container activities-container">
+
+
+    <!-- Page Header -->
+
+    <header class="activities-header">
+
+      <h1>Activities</h1>
+
+      <p>
+        Selected talks, presentations, and academic service.
+      </p>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         TALKS & PRESENTATIONS
+         ===================================================== -->
+
+    <section class="activities-section">
+
+      <h2>
+        Talks &amp; Presentations
+      </h2>
+
+
+      <div class="talk-list">
+
+        {{ range hugo.Data.activities.talks }}
+
+        <article class="talk-item">
+
+          <div class="talk-main">
+
+            <h3>
+              {{ .title }}
+            </h3>
+
+
+            <div class="talk-venue">
+
+              <span>
+                {{ .venue }}
+              </span>
+
+              {{ with .location }}
+
+                <span class="talk-location">
+                  · {{ . }}
+                </span>
+
+              {{ end }}
+
+            </div>
+
+
+            <!-- Optional links -->
+
+            {{ with .links }}
+
+              {{ if or .slides .poster .paper }}
+
+              <div class="talk-links">
+
+                {{ with .slides }}
+
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Slides
+                  </a>
+
+                {{ end }}
+
+
+                {{ with .poster }}
+
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Poster
+                  </a>
+
+                {{ end }}
+
+
+                {{ with .paper }}
+
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Paper
+                  </a>
+
+                {{ end }}
+
+              </div>
+
+              {{ end }}
+
+            {{ end }}
+
+
+            <!-- Optional abstract -->
+
+            {{ with .abstract }}
+
+            <details class="talk-abstract">
+
+              <summary>
+                Abstract
+              </summary>
+
+              <div class="talk-abstract-content">
+                {{ . | markdownify }}
+              </div>
+
+            </details>
+
+            {{ end }}
+
+          </div>
+
+
+          <div class="talk-date">
+            {{ .date }}
+          </div>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ACADEMIC SERVICE
+         ===================================================== -->
+
+    <section class="activities-section service-section">
+
+      <h2>
+        Academic Service
+      </h2>
+
+
+      <div class="service-list">
+
+        {{ range hugo.Data.activities.service }}
+
+        <article class="service-item">
+
+          <div class="service-main">
+
+            <h3>
+              {{ .role }}
+            </h3>
+
+
+            <div class="service-description">
+
+              {{ if .url }}
+
+                <a
+                  href="{{ .url }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ .organization }}
+                </a>
+
+              {{ else }}
+
+                <span>
+                  {{ .organization }}
+                </span>
+
+              {{ end }}
+
+
+              {{ with .institution }}
+
+                <span class="service-institution">
+                  · {{ . }}
+                </span>
+
+              {{ end }}
+
+            </div>
+
+          </div>
+
+
+          <div class="service-date">
+            {{ .date }}
+          </div>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container">
+    © {{ now.Year }} Baoli Hao
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>

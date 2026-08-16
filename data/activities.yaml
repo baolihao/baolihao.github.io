@@ -1,0 +1,88 @@
+# ============================================================
+# Talks & Presentations
+# ============================================================
+
+talks:
+
+  - title: "Modeling, Simulation and Learning for Urban Crime Dynamics"
+    venue: "SIAM Annual Meeting 2026"
+    date: "Jul. 2026"
+    location: "Cleveland, OH"
+    abstract: ""
+    links:
+      slides: "/files/talks/siam-annual-2026.pdf"
+      poster: "/files/talks/crime_poster.pdf"
+      paper: ""
+
+
+  - title: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
+    venue: "SIAM Texas-Louisiana Sectional Meeting"
+    date: "Sept. 2025"
+    location: "Austin, TX"
+    abstract: ""
+    links:
+      slides: "/files/talks/pinn_slide.pdf"
+      poster: ""
+      paper: "/files/publications/stiff-pinns-2026.pdf"
+
+
+  - title: "Modeling and Analysis of Poisson–Nernst–Planck Systems with Steric Effects and Relative Drags"
+    venue: "Central AMS Sectional Meeting"
+    date: "Apr. 2025"
+    location: "Lawrence, KS"
+    abstract: ""
+    links:
+      slides: ""
+      poster: ""
+      paper: "https://arxiv.org/abs/2607.21742"
+
+
+  - title: "Mixed Sign Interactions in the 1D Swarmalator Model"
+    venue: "Summer School and Workshop on Computational & Data Science at Duke"
+    date: "Aug. 2023"
+    location: "Durham, NC"
+    abstract: ""
+    links:
+      slides: ""
+      poster: ""
+      paper: "/files/publications/swarmalator-2023.pdf"
+
+
+# ============================================================
+# Academic Service
+# ============================================================
+
+service:
+
+  - role: "Coordinator"
+    organization: "Multiscale Modeling and Computation Seminar"
+    institution: "Illinois Institute of Technology"
+    date: "2022 – Present"
+    url: "https://sites.google.com/view/multiscaleiit/home"
+
+
+  - role: "Sponsorship and Student Support Chair"
+    organization: "ACM HyperText 2025 Conference"
+    institution: "Chicago, IL"
+    date: "2024 – 2025"
+    url: "https://ht.acm.org/ht2025/organizers/"
+
+  - role: "Program Committee Member"
+    organization: "AAAI Conference on Artificial Intelligence (AAAI 2027)"
+    institution: ""
+    date: "2026"
+    url: ""
+
+
+  - role: "Reviewer"
+    organization: "AAAI Conference on Artificial Intelligence (AAAI 2026)"
+    institution: ""
+    date: "2025"
+    url: ""
+
+
+  - role: "Reviewer"
+    organization: "ACM Transactions on Modeling and Computer Simulation (TOMACS)"
+    institution: ""
+    date: "2026"
+    url: ""

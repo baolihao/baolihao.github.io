@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Publications | Baoli Hao</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a class="site-name" href="/">
+      Baoli Hao
+    </a>
+
+
+    <nav class="nav-links">
+
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/research/">
+        Research
+      </a>
+
+      <a
+        class="active"
+        href="/publications/"
+      >
+        Publications
+      </a>
+
+      <a href="/teaching/">
+        Teaching
+      </a>
+
+      <a href="/activities/">
+        Activities
+      </a>
+
+      <a
+  href="/files/CV/Baoli-CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  CV
+</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     PUBLICATIONS
+     ========================================================= -->
+
+<main class="publications-page">
+
+  <div class="container pub-container">
+
+
+    <!-- Header -->
+
+    <header class="pub-header">
+
+      <h1>Publications</h1>
+
+      <p>
+        Research articles and preprints in scientific machine learning,
+        inverse problems, mathematical modeling, and nonlinear PDEs.
+      </p>
+
+
+      <div class="pub-jump">
+
+        <a href="#preprints">
+          Preprints &amp; Submitted
+        </a>
+
+        <span></span>
+
+        <a href="#published">
+          Published &amp; Accepted
+        </a>
+
+        <span></span>
+
+        <a
+          href="https://scholar.google.com/citations?hl=en&user=LBo6mLwAAAAJ"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Google Scholar
+        </a>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         PREPRINTS
+         ===================================================== -->
+
+    <section
+      class="pub-section"
+      id="preprints"
+    >
+
+      <h2>
+        Preprints &amp; Submitted
+      </h2>
+
+
+      <div class="pub-list">
+
+        {{ range where hugo.Data.publications "group" "preprint" }}
+
+        <article
+          class="pub-item"
+          id="{{ .id }}"
+        >
+
+          <div class="pub-year">
+            {{ .year }}
+          </div>
+
+
+          <div class="pub-body">
+
+            <h3 class="pub-title">
+              {{ .title }}
+            </h3>
+
+
+            <div class="pub-authors">
+
+              {{ range $index, $author := .authors }}
+
+                {{ if $index }}, {{ end }}
+
+                {{ if $author.me }}
+                  <strong>{{ $author.name }}</strong>
+                {{ else }}
+                  {{ $author.name }}
+                {{ end }}
+
+              {{ end }}
+
+            </div>
+
+
+            <div class="pub-meta">
+
+              <span class="pub-venue">
+                {{ .venue }}
+              </span>
+
+
+              <span class="pub-links">
+
+                {{ with .links.arxiv }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    arXiv
+                  </a>
+                {{ end }}
+
+
+                {{ with .links.pdf }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PDF
+                  </a>
+                {{ end }}
+
+
+                {{ with .links.code }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Code
+                  </a>
+                {{ end }}
+
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PUBLISHED
+         ===================================================== -->
+
+    <section
+      class="pub-section"
+      id="published"
+    >
+
+      <h2>
+        Published &amp; Accepted
+      </h2>
+
+
+      <div class="pub-list">
+
+        {{ range where hugo.Data.publications "group" "published" }}
+
+        <article
+          class="pub-item"
+          id="{{ .id }}"
+        >
+
+          <div class="pub-year">
+            {{ .year }}
+          </div>
+
+
+          <div class="pub-body">
+
+            <h3 class="pub-title">
+              {{ .title }}
+            </h3>
+
+
+            <div class="pub-authors">
+
+              {{ range $index, $author := .authors }}
+
+                {{ if $index }}, {{ end }}
+
+                {{ if $author.me }}
+                  <strong>{{ $author.name }}</strong>
+                {{ else }}
+                  {{ $author.name }}
+                {{ end }}
+
+              {{ end }}
+
+            </div>
+
+
+            <div class="pub-meta">
+
+              <span class="pub-venue">
+                {{ .venue }}
+              </span>
+
+
+              <span class="pub-links">
+
+                {{ with .links.pdf }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    PDF
+                  </a>
+                {{ end }}
+
+{{ with .links.arxiv }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    arXiv
+                  </a>
+                {{ end }}
+                
+
+                {{ with .links.doi }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    DOI
+                  </a>
+                {{ end }}
+
+
+                
+
+
+                {{ with .links.code }}
+                  <a
+                    href="{{ . }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Code
+                  </a>
+                {{ end }}
+
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        {{ end }}
+
+      </div>
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+
+<footer>
+  <div class="container">
+    © {{ now.Year }} Baoli Hao
+  </div>
+</footer>
+
+
+</body>
+</html>

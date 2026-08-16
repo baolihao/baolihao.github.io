@@ -1,0 +1,282 @@
+intro:
+  title: "Research"
+
+  lead: >
+    My research develops mathematical and computational methods for
+    **modeling complex dynamical systems and learning their hidden mechanisms
+    from data**. A recurring theme is to exploit mathematical and physical
+    structure, such as interaction kernels and variational principles, to make
+    data-driven inference and scientific computation stable, interpretable,
+    and physically meaningful. My work connects **scientific machine learning
+    and inverse problems** with **multiscale modeling and nonlinear PDEs**,
+    with applications to collective dynamics, ion transport, urban dynamics,
+    and physics-informed computing.
+
+programs:
+
+  - number: "01"
+    id: "collective-dynamics"
+    title: "Learning Collective Dynamics & Interacting Particle Systems"
+
+    question: >
+      How can hidden interaction mechanisms be inferred from collective
+      behavior when observations, interaction structure, or physical laws
+      are only partially known?
+    
+    image:
+    src: "/images/research/collective.gif"
+    alt: "Collective dynamics and interacting particle systems"
+
+    paragraphs:
+      - >
+        My work in collective dynamics studies both the forward and inverse
+        relationship between microscopic interactions and emergent macroscopic
+        behavior. [Earlier work on swarmalators](https://doi.org/10.1103/PhysRevE.108.064214)
+         examined how competing
+        attractive and repulsive interactions generate distinct collective
+        states through modeling and analysis.
+        This naturally motivates the inverse question: **what can observed
+        collective behavior reveal about the interactions that produced it?**
+
+      - >
+        Classical interaction-learning methods typically assume sufficiently
+        rich trajectory data and a prescribed interaction architecture.
+        My current work explores what remains identifiable in more **ill-posed** settings, 
+        including inference from highly limited
+        observations, unknown interaction neighborhoods, and observational
+        data for which even the governing physical law is not supplied
+        beforehand.
+
+    directions:
+      - title: "Learning from Limited Observations"
+        text: >
+          We study how interaction kernels can be recovered when  only collective steady states are observed. 
+          Such data make system identification highly degenerate, 
+          and we show that identifiability is governed by the distribution
+           of observed configurations together with the structural 
+           information encoded in the patterns themselves.
+
+      - title: "Learning Interaction Topology"
+        text: >
+          We develop methods that ask not only *how agents interact*, but also
+          *who interacts with whom*. This includes metric, nearest-neighbor,
+          Voronoi, density-dependent interaction rules, etc., with the goal of
+          identifying interaction structure and interaction kernels jointly.
+
+      - title: "Discovering Gravitational Structure"
+        text: >
+          Using Solar-System ephemerides as a testbed, we study whether
+          interpretable physical laws can emerge directly from
+          trajectory observations without imposing the governing law
+          beforehand, including source-dependent interactions and
+          missing-source inference.
+
+
+  - number: "02"
+    id: "ion-transport"
+    title: "Ion Transport & PNP Equations"
+
+
+    question: >
+     How can thermodynamically consistent models of ion transport 
+     be derived, analyzed, and inferred from data by exploiting their 
+     energetic and variational structure?
+
+    paragraphs:
+      - >
+       My work on ion transport begins with the mathematical structure 
+       of nonequilibrium transport models. 
+       In concentrated ionic systems, short-range steric interactions 
+       and friction between species introduce mechanisms absent 
+       from classical dilute Poisson–Nernst–Planck theory. 
+       Using energetic variational principles, we study how 
+       conservative interactions enter the free energy
+       while dissipative mechanisms modify transport 
+       and mobility, and how this structure governs
+        finite-energy solutions and long-time relaxation giving rise to **cross-diffusion**.
+      - >
+        This forward understanding motivates a complementary inverse question:
+        **what constitutive physics is actually supported by concentration
+        data?** Rather than fixing a local constitutive law in advance, my
+        current work studies how observations distinguish effective local
+        models from genuinely nonlocal interactions and which components of
+        the underlying constitutive physics are identifiable.
+
+    directions:
+      - title: "Modeling & Analysis of Cross-Diffusion PNP Systems"
+        text: >
+         We develop thermodynamically consistent PNP-type models 
+         for crowded ionic systems, where steric interactions 
+         modify the free energy while interspecies drag modifies 
+         dissipation and transport. These mechanisms generate 
+         nonlinear cross-diffusion through distinct energetic 
+         and dissipative pathways. We analyze the resulting 
+         PDE systems with emphasis on global finite-energy solutions, 
+         entropy dissipation, and long-time behavior.
+
+        links:
+         - label: "Paper"
+           url: "https://arxiv.org/abs/2607.21742"
+         - label: "Code"
+           url: ""
+         - label: "Slides"
+           url: ""
+
+      - title: "Learning & Identifying Constitutive Physics"
+        text: >
+           We study structure-preserving inverse problems for identifying constitutive
+            physics from concentration data, including when nonlocal steric interactions
+           admit effective local closures and when genuinely nonlocal structure remains
+            identifiable. More broadly, we investigate learnable components of free energy
+           and dissipation, such as steric interactions, and
+           transport mechanisms, while preserving the underlying gradient-flow 
+           and Onsager structure and understanding 
+           the mathematical limits of their identifiability.
+
+      # - title: "Identifying Constitutive Physics"
+      #   text: >
+      #     More broadly, I study structure-preserving inverse problems for
+      #     learning components of free energy and dissipation, including steric
+      #     interactions, dielectric response, and transport mechanisms, together
+      #     with the mathematical limits of their identifiability.
+
+
+  - number: "03"
+    id: "urban-dynamics"
+    title: "Multiscale Urban Dynamics"
+
+    question: >
+      How do individual-level behaviors give 
+      rise to collective urban crime patterns across scales, 
+      and what hidden mechanisms can
+      be identified from observed data?
+
+    paragraphs:
+      - >
+        My work on urban dynamics develops multiscale mathematical models that
+        connect individual behavior with emergent spatio-temporal patterns at
+        the population level. Starting from agent-based descriptions of
+        residential burglary, we study continuum PDE models obtained through
+        mean-field limits and develop computational methods for simulating
+        these systems in heterogeneous and realistic urban environments.
+
+      - >
+       A complementary direction reverses this perspective: 
+       **what hidden urban crime mechanisms can be identified 
+       from observed dynamics?** My current work develops 
+       **PDE-constrained optimization** and **weak-form finite-element
+       inverse methods** for identifying hidden dynamics and environmental structure. 
+       A particular focus is inference from realistically 
+       observable crime intensity, rather than 
+       direct observations of the underlying model states.
+
+    directions:
+      - title: " Realistic Scientific Computing"
+        text: >
+         We connect probabilistic agent-level descriptions to 
+         nonlinear continuum models and develop robust 
+         finite-element methods for spatially heterogeneous 
+         systems with natural boundary conditions and 
+         realistic urban geometries.
+        links:
+         - label: "Paper"
+           url: "/files/publications/urban-crime-fem-2026.pdf"
+         - label: "Code"
+           url: "https://github.com/baolihao/UrbanCrime-Sim"
+         - label: "Slides"
+           url: "/files/talks/siam-annual-2026-slides.pdf"
+         - label: "Poster"
+           url: "/files/talks/crime-poster.pdf"
+
+
+      - title: "Feedback & Intervention Dynamics"
+        text: >
+          We study how adaptive response and delayed information affect the
+          stability and spatio-temporal behavior. In particular, delayed
+          response can destabilize otherwise stable states and generate
+          oscillatory, moving, splitting, and merging hotspot patterns.
+        links:
+         - label: "Paper"
+           url: "https://arxiv.org/abs/2605.17709"
+         - label: "Code"
+           url: "https://github.com/baolihao/UrbanCrime-Sim"
+         - label: "Slides"
+           url: "/files/talks/siam-annual-2026-slides.pdf"
+         - label: "Poster"
+           url: "/files/talks/crime-poster.pdf"
+
+      - title: "Discovering Hidden Urban Dynamics"
+        text: >
+          We develop PDE-constrained optimization and weak-form finite-element
+          inverse methods for  hidden dynamics, with 
+          focus on indirect observations, realistic crime data, and the
+          mathematical limits of identifiability.
+
+
+  - number: "04"
+    id: "physics-informed-learning"
+    title: "PINNs for Stiff Dynamics"
+
+    question: >
+      How can the mathematical and physical structure of a dynamical system be
+      built into physics-informed neural netowrks to improve stability, accuracy,
+      and differentiability?
+
+    paragraphs:
+      - >
+        My work on PINNs studies how known mathematical
+        structure can be incorporated directly into neural representations for
+        challenging dynamical systems. Rather than treating governing
+        equations, initial conditions, and dynamical interfaces solely as
+        competing penalty terms, we develop representations that enforce
+        essential structure by construction.
+        The broader goal is to understand how the architecture of
+        physics-informed learning should reflect the mathematical organization
+        of the underlying dynamical problem, improving not only prediction
+        accuracy but also conditioning, stability, and the scientific
+        usefulness of the learned solution map.
+
+    directions:
+      - title: "Stable Learning for Stiff Dynamics"
+        text: >
+          We study why physics-informed neural networks become difficult to
+          train for stiff time-dependent PDEs and how exact enforcement of
+          initial conditions can stabilize training, reduce spectral bias,
+          and introduce an implicit time-marching structure.
+        links:
+         - label: "Paper"
+           url: "files/publications/stiff-pinns-2026.pdf"
+         - label: "Code"
+           url: "https://github.com/baolihao/hard-constrained-pinns"
+         - label: "Slides"
+           url: "/files/talks/stiff-pinns-2026.pdf"
+         - label: "Poster"
+           url: ""
+
+
+      - title: "Event-Structured Learning of  Critical Dynamics"
+        text: >
+           For hybrid dynamical systems, we develop neural surrogates whose
+            representations follow known physical phases and enforce exact state
+            chaining across input-dependent event interfaces. The resulting
+            differentiable trajectory families enable the extraction of critical
+           transition boundaries and sensitivities, turning physics-informed
+            surrogates into tools for studying scientifically meaningful quantities
+           of interest.
+        links:
+         - label: "Paper"
+           url: "https://arxiv.org/abs/2605.17709"
+         - label: "Code"
+           url: ""
+         - label: "Slides"
+           url: ""
+         - label: "Poster"
+           url: ""
+
+
+      # - title: "Differentiable Critical Dynamics"
+      #   text: >
+      #     I use learned trajectory families to extract critical transition
+      #     boundaries and sensitivities, turning physics-informed surrogates
+      #     into differentiable tools for studying scientifically meaningful
+      #     quantities of interest.

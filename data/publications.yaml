@@ -1,0 +1,145 @@
+# ============================================================
+# Preprints and submitted manuscripts
+# ============================================================
+
+# I personally suggest adding this only after a public preprint is available.
+# If you want to keep "in preparation" work on the Publications page,
+# uncomment this entry.
+#
+# - id: "equilibrium-learning"
+#   group: "preprint"
+#   year: 2026
+#   title: "One Shot of Learning of Collective Dynamics from Equilibrium in Interacting Agent Systems"
+#   authors:
+#     - name: "Baoli Hao"
+#       me: true
+#     - name: "Mauro Maggioni"
+#     - name: "Ming Zhong"
+#   venue: "In preparation"
+#   links:
+#     arxiv: ""
+#     pdf: ""
+#     code: ""
+
+
+- id: "crime-hotspot-policing"
+  group: "preprint"
+  year: 2026
+  title: "Crime Hotspot Dynamics in Residential Burglary Models with Police Response"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Kamrun Mily"
+    - name: "Annalisa Quaini"
+    - name: "Ming Zhong"
+  venue: "Preprint, 2026"
+  links:
+    arxiv: "https://arxiv.org/abs/2605.17709"
+    pdf: ""
+    code: ""
+
+
+- id: "pnp-drag-steric"
+  group: "preprint"
+  year: 2026
+  title: "Global Finite-Energy Weak Solutions and Sharp Entropy Decay for a Poisson–Nernst–Planck System with Interspecies Drag and Steric Effects"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Fanze Kong"
+    - name: "Kei Fong Lam"
+    - name: "Chun Liu"
+  venue: "Preprint, 2026"
+  links:
+    arxiv: "https://arxiv.org/abs/2607.21742"
+    pdf: ""
+    code: ""
+
+
+- id: "event-structured-pinn"
+  group: "preprint"
+  year: 2026
+  title: "Event-Structured Physics-Informed Neural Networks for Differentiable Critical Clearing Boundaries"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Chenxi Hu"
+    - name: "Ming Zhong"
+    - name: "Ren Wang"
+  venue: "Preprint, 2026"
+  links:
+    arxiv: "https://arxiv.org/abs/2607.27681"
+    pdf: ""
+    code: ""
+
+
+# ============================================================
+# Published and accepted papers
+# ============================================================
+
+- id: "phase-field-micropolar"
+  group: "published"
+  year: 2026
+  title: "On a Phase Field Model for Binary Mixtures of Micropolar Fluids with Non-Matched Densities and Moving Contact Lines"
+  authors:
+    - name: "Kin Shing Chan"
+    - name: "Baoli Hao"
+      me: true
+    - name: "Kei Fong Lam"
+    - name: "Björn Stinner"
+  venue: "Interfaces and Free Boundaries, published online first, 2026"
+  links:
+    arxiv: "https://arxiv.org/abs/2504.21258"
+    doi: "https://doi.org/10.4171/IFB/570"
+    
+
+
+- id: "urban-crime-fem"
+  group: "published"
+  year: 2026
+  title: "A Finite Element Framework for Simulating Residential Burglary in Realistic Urban Geometries"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Kamrun Mily"
+    - name: "Annalisa Quaini"
+    - name: "Ming Zhong"
+  venue: "Mathematical Models and Methods in Applied Sciences, 36(5):1019–1050, 2026"
+  links:
+    pdf: "/files/publications/urban-crime-fem-2026.pdf"
+    doi: "https://doi.org/10.1142/S0218202526500193"
+    code: "https://github.com/baolihao/UrbanCrime-Sim"
+
+
+- id: "stiff-pinns"
+  group: "published"
+  year: 2026
+  title: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Chun Liu"
+    - name: "Ulisses Braga-Neto"
+    - name: "Lifan Wang"
+    - name: "Ming Zhong"
+  venue: "Foundations of Data Science, 2026"
+  links:
+    pdf: "/files/publications/stiff-pinns-2026.pdf"
+    doi: "https://doi.org/10.3934/fods.2026016"
+    code: "https://github.com/baolihao/hard-constrained-pinns"
+
+
+- id: "swarmalator-1d"
+  group: "published"
+  year: 2023
+  title: "Attractive and Repulsive Interactions in the One-Dimensional Swarmalator Model"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Ming Zhong"
+    - name: "Kevin O'Keeffe"
+  venue: "Physical Review E, 108(6):064214, 2023"
+  links:
+    pdf: "/files/publications/swarmalator-2023.pdf"
+    doi: "https://doi.org/10.1103/PhysRevE.108.064214"
+    code: "https://github.com/baolihao/swarmalators-1d-mixed-coupling"

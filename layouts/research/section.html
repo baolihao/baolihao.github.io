@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Research | Baoli Hao</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     Navigation
+     ========================================================= -->
+
+<header class="site-header">
+
+  <div class="container nav">
+
+    <a class="site-name" href="/">
+      Baoli Hao
+    </a>
+
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a class="active" href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/activities/">Activities</a>
+      <a
+  href="/files/CV/Baoli-CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  CV
+</a>
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     Research Page
+     ========================================================= -->
+
+<section class="research-page">
+
+  <div class="container">
+
+
+    <!-- =====================================================
+         Research Introduction
+         ===================================================== -->
+
+  <header class="research-intro">
+
+  <h1>
+    {{ hugo.Data.research.intro.title }}
+  </h1>
+
+  <div class="research-intro-grid">
+
+    <!-- Left: research statement -->
+    <div class="research-intro-text">
+
+      <p>
+        {{ hugo.Data.research.intro.lead | markdownify }}
+      </p>
+
+    </div>
+
+
+    <!-- Right: overview figure -->
+    <div class="research-intro-figure">
+
+      <img
+        src="/images/research/research-overview.png"
+        alt="Overview of research on complex dynamical systems"
+      >
+
+    </div>
+
+  </div>
+
+</header>
+    <!-- =====================================================
+         Research Navigation
+         ===================================================== -->
+
+    <nav
+      class="research-jump"
+      aria-label="Research areas"
+    >
+
+      {{ range hugo.Data.research.programs }}
+
+        <a href="#{{ .id }}">
+          <span>{{ .number }}</span>
+          {{ .title }}
+        </a>
+
+      {{ end }}
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         Research Programs
+         ===================================================== -->
+
+    <div class="research-programs">
+
+
+      {{ range hugo.Data.research.programs }}
+
+
+      <article
+        class="research-program"
+        id="{{ .id }}"
+      >
+
+
+        <!-- =================================================
+             Program Heading
+             ================================================= -->
+
+        <header class="research-program-heading">
+
+
+          <div class="research-number">
+            {{ .number }}
+          </div>
+
+
+          <div class="research-heading-content">
+
+            <h2>
+              {{ .title }}
+            </h2>
+
+            <p class="research-question">
+              {{ .question }}
+            </p>
+
+          </div>
+
+
+        </header>
+
+        {{ if eq .id "physics-informed-learning" }}
+
+  <figure class="research-overview-figure">
+    <img
+      src="/images/research/sciml.png"
+      alt="Structure-aware physics-informed learning"
+    >
+  </figure>
+
+{{ end }}
+
+
+
+        <!-- =================================================
+             Program Body
+             ================================================= -->
+
+        <div class="research-program-body">
+
+
+          <!-- Main Narrative -->
+
+       <div class="research-program-main
+  {{- if eq .id "collective-dynamics" }} has-figure figure-right
+  {{- else if eq .id "ion-transport" }} has-figure figure-left
+  {{- else if eq .id "urban-dynamics" }} has-figure figure-right
+  {{- end }}">
+
+  <!-- Ion Transport: figure on the left -->
+  {{ if eq .id "ion-transport" }}
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/PNP.jpg"
+        alt="Ion transport and Poisson–Nernst–Planck dynamics"
+      >
+    </figure>
+
+  {{ end }}
+
+
+  <!-- Narrative -->
+  <div class="research-narrative">
+
+    {{ range .paragraphs }}
+      <p>
+        {{ . | markdownify }}
+      </p>
+    {{ end }}
+
+  </div>
+
+
+  <!-- Collective Dynamics: figure on the right -->
+  {{ if eq .id "collective-dynamics" }}
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/collective.gif"
+        alt="Collective dynamics and interacting particle systems"
+      >
+    </figure>
+
+  {{ end }}
+
+
+  <!-- Urban Dynamics: figure on the right -->
+  {{ if eq .id "urban-dynamics" }}
+
+    <figure class="research-program-figure">
+      <img
+        src="/images/research/CHI-speed.gif"
+        alt="Spatiotemporal urban crime dynamics in Chicago"
+      >
+    </figure>
+
+  {{ end }}
+
+</div>
+
+          <!-- =================================================
+               Figure placeholder
+
+               We will add figures later.
+               ================================================= -->
+
+
+
+<!-- =================================================
+     Research Directions
+     ================================================= -->
+
+<div class="research-directions directions-{{ len .directions }}">
+
+  {{ range .directions }}
+
+    <div class="research-direction">
+
+      <div class="research-direction-content">
+
+        <h3>
+          {{ .title }}
+        </h3>
+
+        <p>
+          {{ .text | markdownify }}
+        </p>
+
+      </div>
+
+
+      {{ with .links }}
+
+        <div class="research-direction-links">
+
+          {{ range . }}
+
+            {{ if .url }}
+
+              <a
+                href="{{ .url }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{ .label }}
+              </a>
+
+            {{ end }}
+
+          {{ end }}
+
+        </div>
+
+      {{ end }}
+
+    </div>
+
+  {{ end }}
+
+</div>
+
+
+<!-- Close research-program-body -->
+</div>
+
+
+
+
+      </article>
+
+
+      {{ end }}
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     Footer
+     ========================================================= -->
+
+<footer>
+
+  <div class="container">
+    © {{ now.Year }} Baoli Hao
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
