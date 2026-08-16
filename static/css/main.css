@@ -2169,10 +2169,17 @@ footer {
     margin-left: 52px;
   }
 
-  .research-directions {
+  .research-directions.directions-2,
+  .research-directions.directions-3 {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 18px;
   }
+
+    .research-direction {
+    width: 100%;
+    padding: 20px 20px 16px;
+  }
+
 
 }
 
