@@ -2230,3 +2230,113 @@ footer {
   }
 
 }
+
+/* ============================================================
+   Final mobile cleanup — Homepage
+   ============================================================ */
+
+@media (max-width: 760px) {
+
+  /* Page width */
+  .container {
+    width: calc(100% - 32px);
+  }
+
+
+  /* ----------------------------------------------------------
+     Hero
+     ---------------------------------------------------------- */
+
+  .hero {
+    padding: 34px 0 46px;
+  }
+
+  .hero-heading {
+    margin-bottom: 26px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+  }
+
+  .position {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+
+  /* Correct class: hero-content-grid */
+  .hero-content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 26px;
+    column-gap: 0;
+    align-items: start;
+  }
+
+
+  /* Portrait */
+  .hero-photo {
+    order: -1;
+
+    width: 180px;
+    height: auto;
+
+    justify-self: start;
+    align-self: auto;
+
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 2px;
+  }
+
+
+  /* Text */
+  .bio {
+    margin-bottom: 22px;
+
+    font-size: 16px;
+    line-height: 1.65;
+
+    text-align: left;
+    hyphens: none;
+  }
+
+  .research-statement {
+    margin-bottom: 24px;
+
+    font-size: 16.5px;
+    line-height: 1.65;
+
+    text-align: left;
+    hyphens: none;
+  }
+
+
+  /* Social links */
+  .hero-socials {
+    gap: 10px 18px;
+  }
+
+  .social-separator {
+    display: none;
+  }
+
+  .hero-socials a {
+    font-size: 14.5px;
+  }
+
+}
