@@ -2506,14 +2506,11 @@ footer {
     min-width: 0;
   }
 
-  .bio {
-    text-align: left;
-    hyphens: none;
-  }
-
+  .bio,
   .research-statement {
-    text-align: left;
-    hyphens: none;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 
 }
