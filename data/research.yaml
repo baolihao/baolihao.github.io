@@ -250,11 +250,11 @@ programs:
           and introduce an implicit time-marching structure.
         links:
          - label: "Paper"
-           url: "files/publications/stiff-pinns-2026.pdf"
+           url: "/files/publications/stiff-pinns-2026.pdf"
          - label: "Code"
            url: "https://github.com/baolihao/hard-constrained-pinns"
          - label: "Slides"
-           url: "/files/talks/stiff-pinns-2026.pdf"
+           url: "/files/talks/pinn_slide.pdf"
          - label: "Poster"
            url: ""
 
