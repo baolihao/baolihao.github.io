@@ -10,7 +10,7 @@ intro:
     and physically meaningful. My work connects **scientific machine learning
     and inverse problems** with **multiscale modeling and nonlinear PDEs**,
     with applications to collective dynamics, ion transport, social dynamics,
-    and scientific computing.
+    and power systems.
 
 programs:
 
@@ -19,9 +19,8 @@ programs:
     title: "Learning Collective Dynamics & Interacting Particle Systems"
 
     question: >
-      How can hidden interaction mechanisms be inferred from collective
-      behavior when observations, interaction structure, or physical laws
-      are only partially known?  
+      How can hidden interaction mechanisms be inferred from collective behavior
+       under incomplete observations and partial model knowledge?
     
     image:
     src: "/images/research/collective.gif"
