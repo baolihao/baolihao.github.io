@@ -13,6 +13,11 @@
   role: "Grader"
   term: "Spring 2025"
 
+- code: "Summer Undergraduate Research Programme"
+  course: "Python for Research"
+  role: "Instructor & Curriculum Designer"
+  term: "Summer 2023"
+
 - code: "MATH 151"
   course: "Calculus I"
   role: "Recitation Instructor"
