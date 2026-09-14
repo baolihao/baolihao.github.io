@@ -54,6 +54,10 @@ programs:
           and we show that identifiability is governed by the distribution
            of observed configurations together with the structural 
            information encoded in the patterns themselves.
+        links:
+         - label: "Paper"
+           url: "https://arxiv.org/abs/2609.12004"
+      
 
       - title: "Learning Interaction Topology"
         text: >
