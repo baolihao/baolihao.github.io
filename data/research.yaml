@@ -37,13 +37,13 @@ programs:
         collective behavior reveal about the interactions that produced it?**
 
       - >
-        Classical interaction-learning methods typically assume sufficiently
-        rich trajectory data and a prescribed interaction architecture.
-        My current work explores what remains identifiable in more **ill-posed** settings, 
-        including inference from highly limited
-        observations, unknown interaction neighborhoods, and observational
-        data for which even the governing physical law is not supplied
-        beforehand.
+        Classical interaction-learning methods typically assume 
+        rich trajectory data and a prescribed interaction architecture. 
+        My current work instead asks what remains identifiable when these assumptions 
+        break down: when only steady-state patterns are observed, when the interaction
+         topology is unknown, or when part of the governing dynamics itself is missing. 
+         Across these settings, the central question is how the observation regime 
+         and the structure of the dynamics determine what can and cannot be recovered.
 
     directions:
       - title: "Learning from Limited Observations"
@@ -85,9 +85,9 @@ programs:
 
 
     question: >
-     How can thermodynamically consistent models of ion transport 
-     be derived, analyzed, and inferred from data by exploiting their 
-     energetic and variational structure?
+     How can energetic and variational structure guide both 
+     the modeling of ion transport and the identification of constitutive 
+     physics from data?
 
     paragraphs:
       - >
@@ -153,10 +153,8 @@ programs:
     title: "Multiscale Social Dynamics"
 
     question: >
-      How do individual-level behaviors give 
-      rise to collective urban crime patterns across scales, 
-      and what hidden mechanisms can
-      be identified from observed data?
+     How do individual-level mechanisms generate population-level patterns, 
+     and what hidden mechanisms can be identified from indirect observations?
 
     paragraphs:
       - >
@@ -178,7 +176,7 @@ programs:
        direct observations of the underlying model states.
 
     directions:
-      - title: " Realistic Scientific Computing"
+      - title: " From Agent-Based Models to Continuum PDEs"
         text: >
          We connect probabilistic agent-level descriptions to 
          nonlinear continuum models and develop robust 
@@ -226,7 +224,7 @@ programs:
 
     question: >
       How can the mathematical and physical structure of a dynamical system be
-      built into physics-informed neural netowrks to improve stability, accuracy,
+      built into physics-informed neural networks to improve stability, accuracy,
       and differentiability?
 
     paragraphs:
