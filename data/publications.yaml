@@ -20,7 +20,20 @@
 #     arxiv: ""
 #     pdf: ""
 #     code: ""
-
+- id: "collective-steady-states"
+  group: "preprint"
+  year: 2026
+  title: "Learning Interaction Kernels from Collective Steady States"
+  authors:
+    - name: "Baoli Hao"
+      me: true
+    - name: "Mauro Maggioni"
+    - name: "Ming Zhong"
+  venue: "Preprint, 2026"
+  links:
+    arxiv: "https://arxiv.org/abs/2609.12004"
+    pdf: ""
+    code: ""
 
 - id: "crime-hotspot-policing"
   group: "preprint"
