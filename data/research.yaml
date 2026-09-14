@@ -2,16 +2,14 @@ intro:
   title: "Research"
 
   lead: >
-    A unifying principle of my research is that mathematical and physical structure 
-    should guide both the modeling of complex dynamical systems and the inference 
-    of their hidden mechanisms from data. In the forward direction, 
-    I derive and analyze models and develop computational methods that preserve 
-    essential dynamical, variational, and physical structure. In the inverse direction, 
-    I use this structure to understand what information is contained in limited 
-    or indirect observations, which mechanisms are identifiable, and 
-    how they can be recovered reliably. This perspective connects
-     inverse problems and scientific machine learning with multiscale modeling, 
-     nonlinear PDEs, and interacting particle systems.
+    A unifying theme of my research is how mathematical and physical structure shapes 
+    both dynamical models and what can be learned from observations. 
+    I develop structure-preserving models and computational methods for 
+    complex dynamical systems, and use their underlying structure to determine
+     what information limited or indirect data contain, which hidden mechanisms
+      are identifiable, and how they can be recovered reliably. This perspective 
+      connects inverse problems and scientific machine learning with multiscale
+       modeling, nonlinear PDEs, and interacting particle systems.
 
 programs:
 
