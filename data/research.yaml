@@ -222,7 +222,7 @@ programs:
 
   - number: "04"
     id: "physics-informed-learning"
-    title: "PINNs for Stiff Dynamics"
+    title: "Structure-exploiting PINNs"
 
     question: >
       How can the mathematical and physical structure of a dynamical system be
