@@ -122,6 +122,12 @@ service:
     institution: ""
     date: "2026"
     url: ""
+
+  - role: "Reviewer"
+    organization: "Studies in Applied Mathematics"
+    institution: ""
+    date: "2026"
+    url: ""
     
   - role: "Program Committee Member"
     organization: "AAAI Conference on Artificial Intelligence (AAAI 2027)"
