@@ -4,49 +4,85 @@
 
 talks:
 
-  - title: "Modeling, Simulation and Learning for Urban Crime Dynamics"
-    venue: "SIAM Annual Meeting 2026"
-    date: "Jul. 2026"
-    location: "Cleveland, OH"
-    abstract: ""
-    links:
-      slides: "/files/talks/siam-annual-2026-slides.pdf"
-      poster: "/files/talks/crime_poster.pdf"
-      paper: ""
+  - topic: "Modeling, Simulation and Learning for Urban Crime Dynamics"
+
+    paper: ""
+
+    appearances:
+      - venue: "SIAM Annual Meeting 2026"
+        location: "Cleveland, OH"
+        type: "Talk"
+        date: "Jul. 2026"
+        slides: "/files/talks/siam-annual-2026-slides.pdf"
+
+      - venue: "ICERM Workshop: Partial Differential Equations for Many-Particle Systems"
+        location: "Providence, RI"
+        type: "Poster"
+        date: "Aug. 2026"
+        poster: "/files/talks/crime_poster.pdf"
 
 
-  - title: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
-    venue: "SIAM Texas-Louisiana Sectional Meeting"
-    date: "Sept. 2025"
-    location: "Austin, TX"
-    abstract: ""
-    links:
-      slides: "/files/talks/pinn_slide.pdf"
-      poster: ""
-      paper: "/files/publications/stiff-pinns-2026.pdf"
+  - topic: "Modeling and Analysis of Poisson–Nernst–Planck Systems with Steric Effects and Relative Drags"
+
+    paper: "https://arxiv.org/abs/2607.21742"
+
+    appearances:
+      - venue: "Central AMS Sectional Meeting"
+        location: "Lawrence, KS"
+        type: "Talk"
+        date: "Apr. 2025"
+
+      - venue: "Loyola University Chicago Analysis Seminar"
+        location: "Chicago, IL"
+        type: "Invited Seminar Talk"
+        date: "Dec. 2024"
+
+      - venue: "SIAM Great Lakes Sectional Meeting"
+        location: "Hammond, IN"
+        type: "Talk"
+        date: "Oct. 2024"
 
 
-  - title: "Modeling and Analysis of Poisson–Nernst–Planck Systems with Steric Effects and Relative Drags"
-    venue: "Central AMS Sectional Meeting"
-    date: "Apr. 2025"
-    location: "Lawrence, KS"
-    abstract: ""
-    links:
-      slides: ""
-      poster: ""
-      paper: "https://arxiv.org/abs/2607.21742"
+  - topic: "Stability in Training PINNs for Stiff PDEs: Why Initial Conditions Matter"
+
+    paper: "/files/publications/stiff-pinns-2026.pdf"
+
+    appearances:
+      - venue: "SIAM Texas–Louisiana Sectional Meeting"
+        location: "Austin, TX"
+        type: "Talk"
+        date: "Sep. 2025"
+        slides: "/files/talks/pinn_slide.pdf"
+
+      - venue: "Los Alamos National Laboratory: Scale Bridging Meeting and Workshop"
+        location: "Los Alamos, NM"
+        type: "Poster"
+        date: "Apr. 2024"
+
+      - venue: "Midwest Numerical Analysis Day"
+        location: "Ames, IA"
+        type: "Talk"
+        date: "Apr. 2023"
 
 
-  - title: "Mixed Sign Interactions in the 1D Swarmalator Model"
-    venue: "Summer School and Workshop on Computational & Data Science at Duke"
-    date: "Aug. 2023"
-    location: "Durham, NC"
-    abstract: ""
-    links:
-      slides: ""
-      poster: ""
-      paper: "/files/publications/swarmalator-2023.pdf"
+  - topic: "Mixed Sign Interactions in the 1D Swarmalator Model"
 
+    paper: "/files/publications/swarmalator-2023.pdf"
+
+    appearances:
+      - venue: "ICERM Workshop: Interacting Particle Systems: Analysis, Control, Learning and Computation"
+        location: "Providence, RI"
+        type: "Poster"
+        date: "May 2024"
+      - venue: "SIAM Great Lakes Sectional Meeting"
+        location: "East Lansing, MI"
+        type: "Talk"
+        date: "Oct. 2023"
+
+      - venue: "Summer School and Workshop on Computational & Data Science at Duke"
+        location: "Durham, NC"
+        type: "Talk"
+        date: "Aug. 2023"
 
 # ============================================================
 # Academic Service

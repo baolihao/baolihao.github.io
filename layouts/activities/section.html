@@ -116,115 +116,109 @@
 
       <div class="talk-list">
 
-        {{ range hugo.Data.activities.talks }}
+       
+{{ range hugo.Data.activities.talks }}
 
-        <article class="talk-item">
+<article class="talk-topic">
 
-          <div class="talk-main">
-
-            <h3>
-              {{ .title }}
-            </h3>
-
-
-            <div class="talk-venue">
-
-              <span>
-                {{ .venue }}
-              </span>
-
-              {{ with .location }}
-
-                <span class="talk-location">
-                  · {{ . }}
-                </span>
-
-              {{ end }}
-
-            </div>
+  <h3 class="talk-topic-title">
+    {{ .topic }}
+  </h3>
 
 
-            <!-- Optional links -->
+  <div class="talk-appearances">
 
-            {{ with .links }}
+    {{ range .appearances }}
 
-              {{ if or .slides .poster .paper }}
+    <div class="talk-appearance">
 
-              <div class="talk-links">
+      <div class="talk-appearance-main">
 
-                {{ with .slides }}
+        <div class="talk-appearance-info">
 
-                  <a
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Slides
-                  </a>
+          <span class="talk-venue">
+            {{ .venue }}
+          </span>
 
-                {{ end }}
+          {{ with .location }}
+            <span class="talk-location">
+              · {{ . }}
+            </span>
+          {{ end }}
 
+          {{ with .type }}
+            <span class="talk-type">
+              ({{ . }})
+            </span>
+          {{ end }}
 
-                {{ with .poster }}
-
-                  <a
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Poster
-                  </a>
-
-                {{ end }}
+        </div>
 
 
-                {{ with .paper }}
+        {{ if or .slides .poster }}
 
-                  <a
-                    href="{{ . }}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Paper
-                  </a>
+        <div class="talk-links appearance-links">
 
-                {{ end }}
+          {{ with .slides }}
+            <a
+              href="{{ . }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Slides
+            </a>
+          {{ end }}
 
-              </div>
+          {{ with .poster }}
+            <a
+              href="{{ . }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Poster
+            </a>
+          {{ end }}
 
-              {{ end }}
-
-            {{ end }}
-
-
-            <!-- Optional abstract -->
-
-            {{ with .abstract }}
-
-            <details class="talk-abstract">
-
-              <summary>
-                Abstract
-              </summary>
-
-              <div class="talk-abstract-content">
-                {{ . | markdownify }}
-              </div>
-
-            </details>
-
-            {{ end }}
-
-          </div>
-
-
-          <div class="talk-date">
-            {{ .date }}
-          </div>
-
-        </article>
+        </div>
 
         {{ end }}
+
+      </div>
+
+
+      <div class="talk-date">
+        {{ .date }}
+      </div>
+
+    </div>
+
+    {{ end }}
+
+  </div>
+
+
+  {{ with .paper }}
+
+  <div class="talk-topic-links">
+
+    <a
+      href="{{ . }}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Paper
+    </a>
+
+  </div>
+
+  {{ end }}
+
+</article>
+
+{{ end }}
+
+               
+         
 
       </div>
 
