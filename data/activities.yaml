@@ -90,6 +90,11 @@ talks:
 
 service:
 
+  - role: "Co-organizer"
+    organization: "Minisyposium on Multiscale Dynamics in Nonlinear PDEs and Complex Systems"
+    institution: "SIAM Great Lakes Sectional Meeting"
+    date: "Sept. 2026"
+    url: "https://www.purdue.edu/science/events/glsiam-schedule-speakers.html"
   - role: "Coordinator"
     organization: "Multiscale Modeling and Computation Seminar"
     institution: "Illinois Institute of Technology"
