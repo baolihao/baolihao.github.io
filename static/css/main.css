@@ -1324,6 +1324,166 @@ body {
   margin-bottom: 0;
 }
 
+.talk-topic {
+  padding: 14px 0 22px;
+}
+
+.talk-topic + .talk-topic {
+  margin-top: 14px;
+  border-top: 1px solid #ece9e6;
+}
+
+
+.talk-topic-title {
+  margin: 0 0 10px;
+
+  color: #292624;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+
+/* Individual presentation */
+
+/* =========================================================
+   Talk topics
+   ========================================================= */
+
+.talk-topic {
+  padding: 16px 0 24px;
+}
+
+.talk-topic + .talk-topic {
+  margin-top: 12px;
+}
+
+.talk-topic-title {
+  margin: 0 0 18px;
+
+  color: #292624;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+
+/* Individual presentation */
+
+.talk-appearance {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  column-gap: 32px;
+
+  align-items: baseline;
+
+  padding: 4px 0;
+}
+
+.talk-appearance-left {
+  min-width: 0;
+
+  color: #77716d;
+
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.talk-venue {
+  color: #77716d;
+}
+
+.talk-location {
+  color: #918a85;
+}
+
+.talk-type {
+  margin-left: 5px;
+
+  color: #44413f;
+  font-style: italic;
+}
+
+
+/* Slides / Poster inline */
+
+.talk-material-link {
+  position: relative;
+
+  margin-left: 12px;
+  padding-left: 12px;
+
+  color: var(--accent);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.talk-material-link::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 50%;
+
+  width: 1px;
+  height: 0.85em;
+
+  background: #d3cac4;
+
+  transform: translateY(-50%);
+}
+
+.talk-material-link:hover {
+  color: #713216;
+  text-decoration: underline;
+}
+
+
+/* Date */
+
+.talk-appearance .talk-date {
+  padding: 0;
+
+  color: #77716d;
+
+  font-size: 14px;
+  line-height: 1.55;
+
+  white-space: nowrap;
+
+  text-align: right;
+}
+
+.talk-topic-links {
+  margin-top: 8px;
+}
+
+.talk-topic-links a {
+  color: var(--accent);
+
+  font-size: 13.5px;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.talk-topic-links a:hover {
+  color: #713216;
+  text-decoration: underline;
+}
+
 
 /* =========================================================
    Academic Service
@@ -2513,6 +2673,36 @@ footer {
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
+  }
+
+}
+
+
+
+@media (max-width: 760px) {
+
+  .talk-appearance {
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    column-gap: 14px;
+
+    align-items: start;
+
+    padding: 6px 0;
+  }
+
+  .talk-appearance-left {
+    font-size: 13.5px;
+  }
+
+  .talk-appearance .talk-date {
+    font-size: 13px;
+  }
+
+  .talk-topic-title {
+    font-size: 18px;
   }
 
 }

@@ -114,113 +114,61 @@
       </h2>
 
 
-      <div class="talk-list">
-
-       
-{{ range hugo.Data.activities.talks }}
-
-<article class="talk-topic">
-
-  <h3 class="talk-topic-title">
-    {{ .topic }}
-  </h3>
-
-
-  <div class="talk-appearances">
-
     {{ range .appearances }}
 
-    <div class="talk-appearance">
+<div class="talk-appearance">
 
-      <div class="talk-appearance-main">
+  <div class="talk-appearance-left">
 
-        <div class="talk-appearance-info">
+    <span class="talk-venue">
+      {{ .venue }}
+    </span>
 
-          <span class="talk-venue">
-            {{ .venue }}
-          </span>
+    {{ with .location }}
+      <span class="talk-location">
+        · {{ . }}
+      </span>
+    {{ end }}
 
-          {{ with .location }}
-            <span class="talk-location">
-              · {{ . }}
-            </span>
-          {{ end }}
-
-          {{ with .type }}
-            <span class="talk-type">
-              ({{ . }})
-            </span>
-          {{ end }}
-
-        </div>
+    {{ with .type }}
+      <span class="talk-type">
+        ({{ . }})
+      </span>
+    {{ end }}
 
 
-        {{ if or .slides .poster }}
+    {{ with .slides }}
+      <a
+        class="talk-material-link"
+        href="{{ . }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Slides
+      </a>
+    {{ end }}
 
-        <div class="talk-links appearance-links">
-
-          {{ with .slides }}
-            <a
-              href="{{ . }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Slides
-            </a>
-          {{ end }}
-
-          {{ with .poster }}
-            <a
-              href="{{ . }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Poster
-            </a>
-          {{ end }}
-
-        </div>
-
-        {{ end }}
-
-      </div>
-
-
-      <div class="talk-date">
-        {{ .date }}
-      </div>
-
-    </div>
-
+    {{ with .poster }}
+      <a
+        class="talk-material-link"
+        href="{{ . }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Poster
+      </a>
     {{ end }}
 
   </div>
 
 
-  {{ with .paper }}
-
-  <div class="talk-topic-links">
-
-    <a
-      href="{{ . }}"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Paper
-    </a>
-
+  <div class="talk-date">
+    {{ .date }}
   </div>
 
-  {{ end }}
-
-</article>
+</div>
 
 {{ end }}
-
-               
-         
-
-      </div>
 
     </section>
 
