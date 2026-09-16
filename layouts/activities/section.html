@@ -107,72 +107,140 @@
          TALKS & PRESENTATIONS
          ===================================================== -->
 
-    <section class="activities-section">
+    
+<section class="activities-section">
 
-      <h2>
-        Talks &amp; Presentations
-      </h2>
-
-
-    {{ range .appearances }}
-
-<div class="talk-appearance">
-
-  <div class="talk-appearance-left">
-
-    <span class="talk-venue">
-      {{ .venue }}
-    </span>
-
-    {{ with .location }}
-      <span class="talk-location">
-        · {{ . }}
-      </span>
-    {{ end }}
-
-    {{ with .type }}
-      <span class="talk-type">
-        ({{ . }})
-      </span>
-    {{ end }}
+  <h2>
+    Talks &amp; Presentations
+  </h2>
 
 
-    {{ with .slides }}
-      <a
-        class="talk-material-link"
-        href="{{ . }}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Slides
-      </a>
-    {{ end }}
+  <div class="talk-list">
 
-    {{ with .poster }}
-      <a
-        class="talk-material-link"
-        href="{{ . }}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Poster
-      </a>
+    {{ range hugo.Data.activities.talks }}
+
+    <article class="talk-topic">
+
+
+      <!-- Topic title -->
+
+      <h3 class="talk-topic-title">
+        {{ .topic }}
+      </h3>
+
+
+      <!-- Presentations -->
+
+      <div class="talk-appearances">
+
+        {{ range .appearances }}
+
+        <div class="talk-appearance">
+
+          <div class="talk-appearance-left">
+
+            <span class="talk-venue">
+              {{ .venue }}
+            </span>
+
+            {{ with .location }}
+              <span class="talk-location">
+                · {{ . }}
+              </span>
+            {{ end }}
+
+            {{ with .type }}
+              <span class="talk-type">
+                ({{ . }})
+              </span>
+            {{ end }}
+
+
+            <!-- Presentation-specific links -->
+
+            {{ with .slides }}
+              <a
+                class="talk-material-link"
+                href="{{ . }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Slides
+              </a>
+            {{ end }}
+
+            {{ with .poster }}
+              <a
+                class="talk-material-link"
+                href="{{ . }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Poster
+              </a>
+            {{ end }}
+
+          </div>
+
+
+          <!-- Date -->
+
+          <div class="talk-date">
+            {{ .date }}
+          </div>
+
+        </div>
+
+        {{ end }}
+
+      </div>
+
+
+      <!-- Topic-level paper -->
+
+      {{ with .paper }}
+
+      <div class="talk-topic-links">
+
+        <a
+          href="{{ . }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </div>
+
+      {{ end }}
+
+
+      <!-- Optional abstract -->
+
+      {{ with .abstract }}
+
+      <details class="talk-abstract">
+
+        <summary>
+          Abstract
+        </summary>
+
+        <div class="talk-abstract-content">
+          {{ . | markdownify }}
+        </div>
+
+      </details>
+
+      {{ end }}
+
+
+    </article>
+
     {{ end }}
 
   </div>
 
-
-  <div class="talk-date">
-    {{ .date }}
-  </div>
-
-</div>
-
-{{ end }}
-
-    </section>
-
-
+</section>
 
     <!-- =====================================================
          ACADEMIC SERVICE
