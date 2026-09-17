@@ -11,6 +11,7 @@
   const context = canvas.getContext("2d", { alpha: true });
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const pointer = { x: 0, y: 0, active: false };
+  const fishAtlas = new Image();
 
   let width = 0;
   let height = 0;
@@ -21,6 +22,14 @@
   let userPaused = false;
   let inViewport = true;
   let obstacle = null;
+  let fishAtlasReady = false;
+
+  fishAtlas.decoding = "async";
+  fishAtlas.src = "/images/home/ink-sardine-sprites-v1.webp?v=2";
+  fishAtlas.addEventListener("load", () => {
+    fishAtlasReady = true;
+    drawSchool();
+  });
 
   function seededRandom(seed) {
     let value = seed >>> 0;
@@ -70,6 +79,7 @@
         phase: random() * Math.PI * 2,
         depth: 0.58 + random() * 0.68,
         body: 3.7 + random() * 2.8,
+        variant: Math.floor(random() * 3),
         orbit: 0.21 + random() * 0.18,
         trail: []
       };
@@ -339,8 +349,8 @@
     }
     context.lineCap = "round";
     context.lineJoin = "round";
-    context.strokeStyle = "rgba(33, 49, 92, " + 0.045 * individual.depth + ")";
-    context.lineWidth = 4 * individual.depth;
+    context.strokeStyle = "rgba(33, 49, 92, " + 0.03 * individual.depth + ")";
+    context.lineWidth = 3.2 * individual.depth;
     context.stroke();
 
     context.beginPath();
@@ -348,22 +358,48 @@
     for (let index = 1; index < individual.trail.length; index += 1) {
       context.lineTo(individual.trail[index].x, individual.trail[index].y);
     }
-    context.strokeStyle = "rgba(26, 43, 88, " + 0.12 * individual.depth + ")";
-    context.lineWidth = 1.45 * individual.depth;
+    context.strokeStyle = "rgba(26, 43, 88, " + 0.085 * individual.depth + ")";
+    context.lineWidth = 1.15 * individual.depth;
     context.stroke();
   }
 
   function drawFish(individual) {
     const heading = Math.atan2(individual.vy, individual.vx);
     const speed = Math.hypot(individual.vx, individual.vy);
-    const length = individual.body * individual.depth * (0.88 + speed * 0.1);
-    const thickness = Math.max(1.15, length * 0.34);
-    const tailWave = Math.sin(elapsed * 8.2 + individual.phase) * thickness * 0.52;
     const opacity = 0.48 + individual.depth * 0.35;
 
     context.save();
     context.translate(individual.x, individual.y);
     context.rotate(heading);
+
+    if (fishAtlasReady) {
+      const sourceHeight = fishAtlas.naturalHeight / 3;
+      const sourceY = sourceHeight * individual.variant;
+      const spriteWidth =
+        individual.body * individual.depth * (6.15 + speed * 0.24);
+      const spriteHeight =
+        (spriteWidth / (fishAtlas.naturalWidth / sourceHeight)) *
+        (0.93 + individual.variant * 0.045);
+
+      context.globalAlpha = clamp(opacity, 0.58, 0.94);
+      context.drawImage(
+        fishAtlas,
+        0,
+        sourceY,
+        fishAtlas.naturalWidth,
+        sourceHeight,
+        -spriteWidth * 0.5,
+        -spriteHeight * 0.5,
+        spriteWidth,
+        spriteHeight
+      );
+      context.restore();
+      return;
+    }
+
+    const length = individual.body * individual.depth * (0.88 + speed * 0.1);
+    const thickness = Math.max(1.15, length * 0.34);
+    const tailWave = Math.sin(elapsed * 8.2 + individual.phase) * thickness * 0.52;
 
     context.beginPath();
     context.moveTo(-length * 0.72, 0);
