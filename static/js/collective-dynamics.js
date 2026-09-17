@@ -45,6 +45,10 @@
     return vector;
   }
 
+  function clamp(value, minimum, maximum) {
+    return Math.min(maximum, Math.max(minimum, value));
+  }
+
   function createSchool() {
     const random = seededRandom(4815162342);
     const count = width < 520 ? 32 : width < 760 ? 40 : 52;

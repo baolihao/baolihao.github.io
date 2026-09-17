@@ -280,8 +280,9 @@
 .home-about .research-statement {
   font-size: 16px;
   line-height: 1.72;
-  text-align: left;
-  hyphens: none;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .home-about .bio {
