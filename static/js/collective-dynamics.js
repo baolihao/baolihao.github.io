@@ -47,7 +47,7 @@
 
   function createSchool() {
     const random = seededRandom(4815162342);
-    const count = width < 520 ? 58 : width < 760 ? 72 : 92;
+    const count = width < 520 ? 32 : width < 760 ? 40 : 52;
     const shortSide = Math.min(width, height);
     const centerX = width * 0.51;
     const centerY = height * 0.49;
@@ -70,7 +70,7 @@
         orbit: 0.21 + random() * 0.18,
         trail: []
       };
-    });
+    }).sort((first, second) => first.depth - second.depth);
   }
 
   function updateObstacle() {
@@ -97,8 +97,8 @@
     const nextHeight = Math.max(1, Math.round(rect.height));
     const oldWidth = width || nextWidth;
     const oldHeight = height || nextHeight;
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.75);
-    const expectedCount = nextWidth < 520 ? 58 : nextWidth < 760 ? 72 : 92;
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.25);
+    const expectedCount = nextWidth < 520 ? 32 : nextWidth < 760 ? 40 : 52;
 
     width = nextWidth;
     height = nextHeight;
@@ -310,64 +310,32 @@
       individual.y += individual.vy * step;
 
       individual.trail.push({ x: individual.x, y: individual.y });
-      if (individual.trail.length > 17) individual.trail.shift();
+      if (individual.trail.length > 10) individual.trail.shift();
     });
-  }
-
-  function drawWater() {
-    const centerX = width * 0.51;
-    const centerY = height * 0.49;
-    const radius = Math.min(width, height) * 0.36;
-    const glow = context.createRadialGradient(
-      centerX,
-      centerY,
-      radius * 0.05,
-      centerX,
-      centerY,
-      radius
-    );
-
-    glow.addColorStop(0, "rgba(45, 63, 111, 0.075)");
-    glow.addColorStop(0.56, "rgba(62, 81, 130, 0.035)");
-    glow.addColorStop(1, "rgba(62, 81, 130, 0)");
-    context.fillStyle = glow;
-    context.fillRect(0, 0, width, height);
   }
 
   function drawTrail(individual) {
     if (individual.trail.length < 2) return;
 
-    context.lineCap = "round";
-    context.lineJoin = "round";
-
-    context.save();
     context.beginPath();
     context.moveTo(individual.trail[0].x, individual.trail[0].y);
     for (let index = 1; index < individual.trail.length; index += 1) {
       context.lineTo(individual.trail[index].x, individual.trail[index].y);
     }
+    context.lineCap = "round";
+    context.lineJoin = "round";
     context.strokeStyle = "rgba(33, 49, 92, " + 0.045 * individual.depth + ")";
-    context.lineWidth = 4.6 * individual.depth;
-    context.shadowBlur = 7;
-    context.shadowColor = "rgba(35, 52, 97, 0.18)";
+    context.lineWidth = 4 * individual.depth;
     context.stroke();
-    context.restore();
 
+    context.beginPath();
+    context.moveTo(individual.trail[0].x, individual.trail[0].y);
     for (let index = 1; index < individual.trail.length; index += 1) {
-      const progress = index / (individual.trail.length - 1);
-      const previous = individual.trail[index - 1];
-      const current = individual.trail[index];
-
-      context.beginPath();
-      context.moveTo(previous.x, previous.y);
-      context.lineTo(current.x, current.y);
-      context.strokeStyle =
-        "rgba(26, 43, 88, " +
-        Math.pow(progress, 2.15) * 0.16 * individual.depth +
-        ")";
-      context.lineWidth = (0.25 + progress * 2.15) * individual.depth;
-      context.stroke();
+      context.lineTo(individual.trail[index].x, individual.trail[index].y);
     }
+    context.strokeStyle = "rgba(26, 43, 88, " + 0.12 * individual.depth + ")";
+    context.lineWidth = 1.45 * individual.depth;
+    context.stroke();
   }
 
   function drawFish(individual) {
@@ -381,8 +349,6 @@
     context.save();
     context.translate(individual.x, individual.y);
     context.rotate(heading);
-    context.shadowBlur = 4.5 * individual.depth;
-    context.shadowColor = "rgba(27, 43, 84, 0.2)";
 
     context.beginPath();
     context.moveTo(-length * 0.72, 0);
@@ -415,15 +381,11 @@
 
   function drawSchool() {
     context.clearRect(0, 0, width, height);
-    drawWater();
 
-    fish
-      .slice()
-      .sort((first, second) => first.depth - second.depth)
-      .forEach((individual) => {
-        drawTrail(individual);
-        drawFish(individual);
-      });
+    fish.forEach((individual) => {
+      drawTrail(individual);
+      drawFish(individual);
+    });
 
     if (pointer.active && !reducedMotion.matches) {
       context.beginPath();
@@ -436,7 +398,14 @@
 
   function animate(timestamp) {
     if (!lastFrame) lastFrame = timestamp;
-    const delta = Math.min((timestamp - lastFrame) / 1000, 0.034);
+    const elapsedSinceFrame = timestamp - lastFrame;
+
+    if (elapsedSinceFrame < 32) {
+      frameId = window.requestAnimationFrame(animate);
+      return;
+    }
+
+    const delta = Math.min(elapsedSinceFrame / 1000, 0.05);
     lastFrame = timestamp;
     elapsed += delta;
     steerSchool(delta * 60);
