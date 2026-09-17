@@ -80,8 +80,8 @@
         depth: 0.58 + random() * 0.68,
         body: 3.7 + random() * 2.8,
         variant: Math.floor(random() * 3),
-        orbit: 0.21 + random() * 0.18,
-        trail: []
+        wake: index % 4 === 0,
+        orbit: 0.21 + random() * 0.18
       };
     }).sort((first, second) => first.depth - second.depth);
   }
@@ -127,7 +127,6 @@
       fish.forEach((individual) => {
         individual.x *= width / oldWidth;
         individual.y *= height / oldHeight;
-        individual.trail = [];
       });
     }
 
@@ -333,34 +332,41 @@
       individual.vy = velocity.y;
       individual.x += individual.vx * step;
       individual.y += individual.vy * step;
-
-      individual.trail.push({ x: individual.x, y: individual.y });
-      if (individual.trail.length > 10) individual.trail.shift();
     });
   }
 
-  function drawTrail(individual) {
-    if (individual.trail.length < 2) return;
+  function drawWake(individual) {
+    if (!fishAtlasReady || !individual.wake || individual.depth < 1.02) return;
 
-    context.beginPath();
-    context.moveTo(individual.trail[0].x, individual.trail[0].y);
-    for (let index = 1; index < individual.trail.length; index += 1) {
-      context.lineTo(individual.trail[index].x, individual.trail[index].y);
-    }
+    const heading = Math.atan2(individual.vy, individual.vx);
+    const speed = Math.hypot(individual.vx, individual.vy);
+    const spriteWidth =
+      individual.body * individual.depth * (6.15 + speed * 0.24);
+    const spriteHeight = spriteWidth * 0.25;
+    const cycle = (elapsed * 0.43 + individual.phase / (Math.PI * 2)) % 1;
+
+    context.save();
+    context.translate(individual.x, individual.y);
+    context.rotate(heading);
     context.lineCap = "round";
-    context.lineJoin = "round";
-    context.strokeStyle = "rgba(33, 49, 92, " + 0.03 * individual.depth + ")";
-    context.lineWidth = 3.2 * individual.depth;
-    context.stroke();
+    context.lineWidth = Math.max(0.55, individual.depth * 0.58);
 
-    context.beginPath();
-    context.moveTo(individual.trail[0].x, individual.trail[0].y);
-    for (let index = 1; index < individual.trail.length; index += 1) {
-      context.lineTo(individual.trail[index].x, individual.trail[index].y);
+    for (let wave = 0; wave < 2; wave += 1) {
+      const progress = (cycle + wave * 0.46) % 1;
+      if (progress > 0.72) continue;
+
+      const opacity = (1 - progress / 0.72) * 0.1 * individual.depth;
+      const offset = -spriteWidth * (0.5 + progress * 0.2);
+      const radiusX = spriteWidth * (0.035 + progress * 0.035);
+      const radiusY = spriteHeight * (0.52 + progress * 0.9);
+
+      context.beginPath();
+      context.ellipse(offset, 0, radiusX, radiusY, 0, -1.05, 1.05);
+      context.strokeStyle = "rgba(42, 61, 101, " + opacity + ")";
+      context.stroke();
     }
-    context.strokeStyle = "rgba(26, 43, 88, " + 0.085 * individual.depth + ")";
-    context.lineWidth = 1.15 * individual.depth;
-    context.stroke();
+
+    context.restore();
   }
 
   function drawFish(individual) {
@@ -434,7 +440,7 @@
     context.clearRect(0, 0, width, height);
 
     fish.forEach((individual) => {
-      drawTrail(individual);
+      drawWake(individual);
       drawFish(individual);
     });
 
