@@ -12,19 +12,22 @@
    Homepage — collective dynamics hero
    ========================================================= */
 
-.hero-dynamics {
+.hero.hero-dynamics {
   position: relative;
   overflow: hidden;
-  padding: 38px 0 48px;
+  padding: 0;
   border-bottom: 1px solid #e7e3de;
   background:
     radial-gradient(circle at 76% 42%, rgba(46, 63, 108, 0.055), transparent 32%),
     linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%);
 }
 
-.hero-stage {
+.hero-dynamics .hero-stage {
   display: block;
+  width: 100%;
+  max-width: none;
   min-height: 0;
+  margin: 0;
 }
 
 .hero-intro {
@@ -116,16 +119,18 @@
 .dynamics-figure {
   position: relative;
   width: 100%;
+  height: min(621px, calc(48.08vw + 65px));
   min-width: 0;
-  aspect-ratio: 2.08 / 1;
+  aspect-ratio: auto;
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(48, 61, 96, 0.12);
-  border-radius: 24px;
+  border-top: 1px solid rgba(48, 61, 96, 0.12);
+  border-bottom: 1px solid rgba(48, 61, 96, 0.12);
+  border-radius: 0;
   background:
     radial-gradient(circle at 53% 47%, rgba(54, 72, 122, 0.105), transparent 44%),
     linear-gradient(145deg, #fbfcff 0%, #f1f3f9 100%);
-  box-shadow: 0 24px 70px rgba(34, 46, 79, 0.08);
+  box-shadow: none;
   isolation: isolate;
   cursor: crosshair;
 }
@@ -152,8 +157,8 @@
 
 .hero-overlay {
   position: absolute;
-  left: clamp(30px, 4.2vw, 52px);
-  bottom: clamp(28px, 4vw, 48px);
+  left: calc(max(28px, (100vw - var(--width)) / 2) + clamp(30px, 4.2vw, 52px));
+  bottom: calc(clamp(28px, 4vw, 48px) + 58px);
   z-index: 2;
   max-width: calc(100% - 132px);
   pointer-events: none;
@@ -333,7 +338,7 @@
 
 @media (max-width: 760px) {
   .hero.hero-dynamics {
-    padding: 22px 0 34px;
+    padding: 0;
   }
 
   .hero-stage {
@@ -371,14 +376,15 @@
   }
 
   .dynamics-figure {
-    width: min(100%, 580px);
-    margin: 0 auto;
-    aspect-ratio: 1.08 / 1;
+    width: 100%;
+    height: calc(92.6vw + 4px);
+    margin: 0;
+    aspect-ratio: auto;
   }
 
   .hero-overlay {
-    left: 24px;
-    bottom: 28px;
+    left: 52px;
+    bottom: 62px;
     max-width: calc(100% - 72px);
   }
 
