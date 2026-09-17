@@ -251,6 +251,10 @@
   align-items: start;
 }
 
+.home-about-eyebrow {
+  margin-bottom: 28px;
+}
+
 .home-about-heading h2 {
   max-width: 260px;
   margin: 0;
@@ -289,8 +293,9 @@
 }
 
 .home-about-photo {
-  align-self: stretch;
-  min-height: 320px;
+  align-self: start;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background: #eee9e4;
 }
@@ -300,7 +305,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: 68% 42%;
 }
 
 
@@ -346,6 +351,10 @@
     font-size: 11.5px;
   }
 
+  .home-about-eyebrow {
+    margin-bottom: 22px;
+  }
+
   .hero-dynamics h1 {
     margin-bottom: 14px;
     font-size: clamp(48px, 15vw, 66px);
@@ -387,8 +396,7 @@
 
   .home-about-photo {
     width: 132px;
-    min-height: 0;
-    aspect-ratio: 0.9 / 1;
+    aspect-ratio: 1 / 1;
   }
 
   .home-about .hero-socials {

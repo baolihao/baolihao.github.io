@@ -49,20 +49,19 @@
     const random = seededRandom(4815162342);
     const count = width < 520 ? 32 : width < 760 ? 40 : 52;
     const shortSide = Math.min(width, height);
-    const centerX = width * 0.51;
-    const centerY = height * 0.49;
+    const centerX = width * 0.55;
+    const centerY = height * 0.45;
 
     fish = Array.from({ length: count }, (_, index) => {
       const angle = random() * Math.PI * 2;
       const radius = shortSide * (0.13 + Math.pow(random(), 0.72) * 0.29);
-      const clockwise = index % 13 === 0 ? -1 : 1;
       const speed = 0.78 + random() * 1.18;
 
       return {
         x: centerX + Math.cos(angle) * radius * (1.42 + random() * 0.42),
         y: centerY + Math.sin(angle) * radius * (0.72 + random() * 0.28),
-        vx: -Math.sin(angle) * speed * clockwise + (random() - 0.5) * 0.35,
-        vy: Math.cos(angle) * speed * clockwise + (random() - 0.5) * 0.35,
+        vx: -Math.sin(angle) * speed + (random() - 0.5) * 0.35,
+        vy: Math.cos(angle) * speed + (random() - 0.5) * 0.35,
         maxSpeed: 1.45 + random() * 0.92,
         phase: random() * Math.PI * 2,
         depth: 0.58 + random() * 0.68,
@@ -135,19 +134,31 @@
       futureY < obstacle.bottom;
 
     if (inside) {
-      const distances = [
-        { value: futureX - obstacle.left, x: -1, y: 0 },
-        { value: obstacle.right - futureX, x: 1, y: 0 },
-        { value: futureY - obstacle.top, x: 0, y: -1 },
-        { value: obstacle.bottom - futureY, x: 0, y: 1 }
-      ];
-      const nearestEdge = distances.reduce((nearest, edge) =>
-        edge.value < nearest.value ? edge : nearest
+      return {
+        x: 0.31,
+        y: -0.36
+      };
+    }
+
+    // Give fish a shared route around the copy. A consistent up-and-right
+    // current prevents a few individuals from orbiting the lower-left corner.
+    const guideRight = obstacle.right + (width < 520 ? 54 : 92);
+    const guideTop = obstacle.top - (width < 520 ? 48 : 76);
+    if (futureX < guideRight && futureY > guideTop) {
+      const horizontal = 1 - clamp(
+        (futureX - obstacle.left) / Math.max(1, guideRight - obstacle.left),
+        0,
+        1
+      );
+      const vertical = clamp(
+        (futureY - guideTop) / Math.max(1, height - guideTop),
+        0,
+        1
       );
 
       return {
-        x: nearestEdge.x * 0.38,
-        y: nearestEdge.y * 0.38
+        x: 0.06 + horizontal * 0.1,
+        y: -(0.08 + vertical * 0.14)
       };
     }
 
@@ -170,8 +181,8 @@
   }
 
   function steerSchool(step) {
-    const centerX = width * (0.51 + Math.sin(elapsed * 0.17) * 0.024);
-    const centerY = height * (0.49 + Math.cos(elapsed * 0.13) * 0.022);
+    const centerX = width * (0.55 + Math.sin(elapsed * 0.17) * 0.02);
+    const centerY = height * (0.45 + Math.cos(elapsed * 0.13) * 0.018);
     const shortSide = Math.min(width, height);
     const alignmentRadiusSquared = Math.pow(shortSide * 0.135, 2);
     const cohesionRadiusSquared = Math.pow(shortSide * 0.175, 2);
