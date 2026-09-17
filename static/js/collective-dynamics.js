@@ -25,7 +25,7 @@
   let fishAtlasReady = false;
 
   fishAtlas.decoding = "async";
-  fishAtlas.src = "/images/home/ink-sardine-sprites-v1.webp?v=2";
+  fishAtlas.src = "/images/home/ink-sardine-motion-v2.webp?v=2";
   fishAtlas.addEventListener("load", () => {
     fishAtlasReady = true;
     drawSchool();
@@ -69,17 +69,20 @@
       const angle = random() * Math.PI * 2;
       const radius = shortSide * (0.13 + Math.pow(random(), 0.72) * 0.29);
       const speed = 0.78 + random() * 1.18;
+      const vx = -Math.sin(angle) * speed + (random() - 0.5) * 0.35;
+      const vy = Math.cos(angle) * speed + (random() - 0.5) * 0.35;
 
       return {
         x: centerX + Math.cos(angle) * radius * (1.42 + random() * 0.42),
         y: centerY + Math.sin(angle) * radius * (0.72 + random() * 0.28),
-        vx: -Math.sin(angle) * speed + (random() - 0.5) * 0.35,
-        vy: Math.cos(angle) * speed + (random() - 0.5) * 0.35,
+        vx,
+        vy,
         maxSpeed: 1.45 + random() * 0.92,
         phase: random() * Math.PI * 2,
         depth: 0.58 + random() * 0.68,
-        body: 3.7 + random() * 2.8,
-        variant: Math.floor(random() * 3),
+        body: 3.8 + random() * 2.2,
+        renderHeading: Math.atan2(vy, vx),
+        bend: 0,
         wake: index % 4 === 0,
         orbit: 0.21 + random() * 0.18
       };
@@ -332,22 +335,41 @@
       individual.vy = velocity.y;
       individual.x += individual.vx * step;
       individual.y += individual.vy * step;
+
+      const targetHeading = Math.atan2(individual.vy, individual.vx);
+      const headingDifference = Math.atan2(
+        Math.sin(targetHeading - individual.renderHeading),
+        Math.cos(targetHeading - individual.renderHeading)
+      );
+      const maximumTurn =
+        (0.052 + (1.3 - individual.depth) * 0.018) * step;
+      individual.renderHeading += clamp(
+        headingDifference,
+        -maximumTurn,
+        maximumTurn
+      );
+
+      const targetBend = clamp(headingDifference * 2.8, -1, 1);
+      individual.bend +=
+        (targetBend - individual.bend) * Math.min(1, 0.14 * step);
     });
   }
 
   function drawWake(individual) {
     if (!fishAtlasReady || !individual.wake || individual.depth < 1.02) return;
 
-    const heading = Math.atan2(individual.vy, individual.vx);
     const speed = Math.hypot(individual.vx, individual.vy);
-    const spriteWidth =
-      individual.body * individual.depth * (6.15 + speed * 0.24);
+    const spriteWidth = clamp(
+      individual.body * individual.depth * (6.05 + speed * 0.22),
+      12,
+      44
+    );
     const spriteHeight = spriteWidth * 0.25;
     const cycle = (elapsed * 0.43 + individual.phase / (Math.PI * 2)) % 1;
 
     context.save();
     context.translate(individual.x, individual.y);
-    context.rotate(heading);
+    context.rotate(individual.renderHeading);
     context.lineCap = "round";
     context.lineWidth = Math.max(0.55, individual.depth * 0.58);
 
@@ -370,29 +392,41 @@
   }
 
   function drawFish(individual) {
-    const heading = Math.atan2(individual.vy, individual.vx);
     const speed = Math.hypot(individual.vx, individual.vy);
     const opacity = 0.48 + individual.depth * 0.35;
 
     context.save();
     context.translate(individual.x, individual.y);
-    context.rotate(heading);
+    context.rotate(individual.renderHeading);
 
     if (fishAtlasReady) {
-      const sourceHeight = fishAtlas.naturalHeight / 3;
-      const sourceY = sourceHeight * individual.variant;
-      const spriteWidth =
-        individual.body * individual.depth * (6.15 + speed * 0.24);
+      const sourceHeight = fishAtlas.naturalHeight / 5;
+      const sourceX = fishAtlas.naturalWidth * 0.12;
+      const sourceWidth = fishAtlas.naturalWidth * 0.76;
+      const tailMotion =
+        Math.sin(elapsed * (4.1 + speed * 0.55) + individual.phase) * 0.38;
+      const pose = clamp(
+        individual.bend * 0.86 +
+          tailMotion * (1 - Math.abs(individual.bend) * 0.45),
+        -1,
+        1
+      );
+      const poseIndex = clamp(Math.round(2 + pose * 2), 0, 4);
+      const sourceY = sourceHeight * poseIndex;
+      const spriteWidth = clamp(
+        individual.body * individual.depth * (6.05 + speed * 0.22),
+        12,
+        44
+      );
       const spriteHeight =
-        (spriteWidth / (fishAtlas.naturalWidth / sourceHeight)) *
-        (0.93 + individual.variant * 0.045);
+        (spriteWidth / (sourceWidth / sourceHeight)) * 0.96;
 
-      context.globalAlpha = clamp(opacity, 0.58, 0.94);
+      context.globalAlpha = clamp(opacity, 0.54, 0.9);
       context.drawImage(
         fishAtlas,
-        0,
+        sourceX,
         sourceY,
-        fishAtlas.naturalWidth,
+        sourceWidth,
         sourceHeight,
         -spriteWidth * 0.5,
         -spriteHeight * 0.5,
@@ -443,14 +477,6 @@
       drawWake(individual);
       drawFish(individual);
     });
-
-    if (pointer.active && !reducedMotion.matches) {
-      context.beginPath();
-      context.arc(pointer.x, pointer.y, Math.min(width, height) * 0.07, 0, Math.PI * 2);
-      context.strokeStyle = "rgba(38, 56, 102, 0.13)";
-      context.lineWidth = 1;
-      context.stroke();
-    }
   }
 
   function animate(timestamp) {

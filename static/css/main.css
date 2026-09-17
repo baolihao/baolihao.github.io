@@ -17,9 +17,7 @@
   overflow: hidden;
   padding: 0;
   border-bottom: 1px solid #e7e3de;
-  background:
-    radial-gradient(circle at 76% 42%, rgba(46, 63, 108, 0.055), transparent 32%),
-    linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
 }
 
 .hero-dynamics .hero-stage {
@@ -128,23 +126,35 @@
   border-bottom: 1px solid rgba(48, 61, 96, 0.12);
   border-radius: 0;
   background:
-    radial-gradient(circle at 53% 47%, rgba(54, 72, 122, 0.105), transparent 44%),
-    linear-gradient(145deg, #fbfcff 0%, #f1f3f9 100%);
+    radial-gradient(ellipse at 82% 18%, rgba(255, 255, 255, 0.88), transparent 38%),
+    radial-gradient(ellipse at 76% 76%, rgba(70, 92, 141, 0.038), transparent 46%),
+    linear-gradient(118deg, #fcfdff 0%, #f8fafe 48%, #eef3fa 100%);
   box-shadow: none;
   isolation: isolate;
-  cursor: crosshair;
+  cursor: default;
 }
 
 .dynamics-figure::before {
   content: "";
   position: absolute;
-  inset: 5%;
+  inset: -16%;
   z-index: -1;
-  border-radius: 45%;
   background:
-    radial-gradient(circle at 30% 34%, rgba(255, 255, 255, 0.62), transparent 36%),
-    radial-gradient(circle at 72% 66%, rgba(42, 58, 105, 0.055), transparent 42%);
-  filter: blur(12px);
+    radial-gradient(ellipse at 64% 32%, transparent 0 29%, rgba(255, 255, 255, 0.42) 34%, transparent 40%),
+    radial-gradient(ellipse at 79% 69%, transparent 0 21%, rgba(64, 86, 137, 0.026) 28%, transparent 37%);
+  opacity: 0.72;
+  animation: water-light-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes water-light-drift {
+  from {
+    transform: translate3d(-1.2%, 0.6%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(1.5%, -0.8%, 0) scale(1.035);
+  }
 }
 
 #collective-dynamics-canvas {
@@ -444,6 +454,10 @@
   .hero-action-secondary,
   .dynamics-toggle {
     transition: none;
+  }
+
+  .dynamics-figure::before {
+    animation: none;
   }
 }
 
