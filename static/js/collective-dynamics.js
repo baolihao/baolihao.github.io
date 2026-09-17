@@ -12,6 +12,13 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const pointer = { x: 0, y: 0, active: false };
   const fishAtlas = new Image();
+  const fishAtlasFrames = [
+    { x: 88, y: 16, width: 434, height: 142 },
+    { x: 90, y: 161, width: 432, height: 122 },
+    { x: 91, y: 301, width: 431, height: 81 },
+    { x: 90, y: 405, width: 433, height: 99 },
+    { x: 93, y: 512, width: 431, height: 113 }
+  ];
 
   let width = 0;
   let height = 0;
@@ -65,7 +72,7 @@
     const centerX = width * 0.55;
     const centerY = height * 0.45;
 
-    fish = Array.from({ length: count }, () => {
+    fish = Array.from({ length: count }, (_, index) => {
       const angle = random() * Math.PI * 2;
       const radius = shortSide * (0.13 + Math.pow(random(), 0.72) * 0.29);
       const speed = 0.78 + random() * 1.18;
@@ -83,6 +90,7 @@
         body: 3.8 + random() * 2.2,
         renderHeading: Math.atan2(vy, vx),
         bend: 0,
+        wake: index % 4 === 0,
         orbit: 0.21 + random() * 0.18
       };
     }).sort((first, second) => first.depth - second.depth);
@@ -354,6 +362,42 @@
     });
   }
 
+  function drawWake(individual) {
+    if (!fishAtlasReady || !individual.wake || individual.depth < 1.02) return;
+
+    const speed = Math.hypot(individual.vx, individual.vy);
+    const spriteWidth = clamp(
+      individual.body * individual.depth * (6.05 + speed * 0.22),
+      12,
+      44
+    );
+    const spriteHeight = spriteWidth * 0.25;
+    const cycle = (elapsed * 0.43 + individual.phase / (Math.PI * 2)) % 1;
+
+    context.save();
+    context.translate(individual.x, individual.y);
+    context.rotate(individual.renderHeading);
+    context.lineCap = "round";
+    context.lineWidth = Math.max(0.55, individual.depth * 0.58);
+
+    for (let wave = 0; wave < 2; wave += 1) {
+      const progress = (cycle + wave * 0.46) % 1;
+      if (progress > 0.72) continue;
+
+      const opacity = (1 - progress / 0.72) * 0.1 * individual.depth;
+      const offset = -spriteWidth * (0.5 + progress * 0.2);
+      const radiusX = spriteWidth * (0.035 + progress * 0.035);
+      const radiusY = spriteHeight * (0.52 + progress * 0.9);
+
+      context.beginPath();
+      context.ellipse(offset, 0, radiusX, radiusY, 0, -1.05, 1.05);
+      context.strokeStyle = "rgba(42, 61, 101, " + opacity + ")";
+      context.stroke();
+    }
+
+    context.restore();
+  }
+
   function drawFish(individual) {
     const speed = Math.hypot(individual.vx, individual.vy);
     const opacity = 0.48 + individual.depth * 0.35;
@@ -363,9 +407,6 @@
     context.rotate(individual.renderHeading);
 
     if (fishAtlasReady) {
-      const sourceHeight = fishAtlas.naturalHeight / 5;
-      const sourceX = fishAtlas.naturalWidth * 0.12;
-      const sourceWidth = fishAtlas.naturalWidth * 0.76;
       const tailMotion =
         Math.sin(elapsed * (4.1 + speed * 0.55) + individual.phase) * 0.38;
       const pose = clamp(
@@ -375,22 +416,22 @@
         1
       );
       const poseIndex = clamp(Math.round(2 + pose * 2), 0, 4);
-      const sourceY = sourceHeight * poseIndex;
+      const frame = fishAtlasFrames[poseIndex];
       const spriteWidth = clamp(
         individual.body * individual.depth * (6.05 + speed * 0.22),
-        18,
+        12,
         44
       );
       const spriteHeight =
-        (spriteWidth / (sourceWidth / sourceHeight)) * 0.96;
+        (spriteWidth / (frame.width / frame.height)) * 0.96;
 
-      context.globalAlpha = clamp(opacity, 0.66, 0.9);
+      context.globalAlpha = clamp(opacity, 0.54, 0.9);
       context.drawImage(
         fishAtlas,
-        sourceX,
-        sourceY,
-        sourceWidth,
-        sourceHeight,
+        frame.x,
+        frame.y,
+        frame.width,
+        frame.height,
         -spriteWidth * 0.5,
         -spriteHeight * 0.5,
         spriteWidth,
@@ -437,6 +478,7 @@
     context.clearRect(0, 0, width, height);
 
     fish.forEach((individual) => {
+      drawWake(individual);
       drawFish(individual);
     });
   }
