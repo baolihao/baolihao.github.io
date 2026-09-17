@@ -53,111 +53,107 @@
 <main>
 <!-- ==================== HERO ==================== -->
 
-<section class="hero">
-  <div class="container">
+<section class="hero hero-dynamics">
+  <div class="container hero-stage">
+    <figure class="dynamics-figure" data-dynamics-figure>
+      <canvas id="collective-dynamics-canvas" aria-hidden="true"></canvas>
 
-    <!-- Name and position -->
-    <div class="hero-heading">
-      <h1>Baoli Hao</h1>
+      <div class="hero-overlay" data-dynamics-obstacle>
+        <h1>Baoli Hao</h1>
 
-      <p class="position">
-        Ph.D. Candidate in Applied Mathematics<br>
-        Illinois Institute of Technology
+        <p class="position">
+          Ph.D. Candidate in Applied Mathematics<br>
+          Illinois Institute of Technology
+        </p>
+      </div>
+
+      <button
+        class="dynamics-toggle"
+        type="button"
+        aria-label="Pause fish school animation"
+        aria-pressed="false"
+        data-dynamics-toggle
+      >
+        <span class="dynamics-toggle-icon" aria-hidden="true">Ⅱ</span>
+      </button>
+    </figure>
+  </div>
+</section>
+
+<section class="home-about" aria-labelledby="about-heading">
+  <div class="container home-about-grid">
+    <div class="home-about-copy">
+      <h2 class="section-eyebrow" id="about-heading">About</h2>
+
+      <p class="bio">
+        I am a fifth-year Ph.D. candidate in
+        <strong>Applied Mathematics</strong> at the
+        <a href="https://www.iit.edu/applied-math" target="_blank" rel="noopener noreferrer">
+          Illinois Institute of Technology</a>,
+        where I am advised by
+        <a href="https://sites.google.com/view/chunliu" target="_blank" rel="noopener noreferrer">
+          Prof. Chun Liu</a>
+        and
+        <a href="https://mingjzhong.github.io/" target="_blank" rel="noopener noreferrer">
+          Prof. Ming Zhong
+        </a>
+        (University of Houston). I received my B.Sc. in
+        <strong>Computing Mathematics</strong> (First Class Honours) from
+        <a href="https://www.cityu.edu.hk/ma/" target="_blank" rel="noopener noreferrer">
+          City University of Hong Kong</a>,
+        with a minor in <strong>Computer Science</strong>.
       </p>
-    </div>
 
+      <p class="research-statement">
+        My research focuses on <strong>inverse problems</strong> and
+        <strong>scientific machine learning (SciML)</strong> for complex dynamical
+        systems, with an emphasis on learning hidden mechanisms from incomplete or
+        indirect observations by exploiting mathematical and physical structure. I
+        also work on the mathematical modeling and analysis of multiscale nonlinear
+        systems, including interacting particle systems and PDEs, with applications
+        in biophysics and materials science.
+      </p>
 
-    <!-- Bio + portrait -->
-    <div class="hero-content-grid">
-
-      <div class="hero-copy">
-
-        <p class="bio">
-          I am a fifth-year Ph.D. candidate in
-          <strong>Applied Mathematics</strong> at the
-          <a href="https://www.iit.edu/applied-math" target="_blank">
-            Illinois Institute of Technology</a>,
-          where I am advised by
-          <a href="https://sites.google.com/view/chunliu" target="_blank">
-            Prof. Chun Liu</a>
-          and
-          <a href="https://mingjzhong.github.io/" target="_blank">
-            Prof. Ming Zhong
-          </a>
-          (University of Houston). I received my B.Sc. in
-          <strong>Computing Mathematics</strong> (First Class Honours) from
-          <a href="https://www.cityu.edu.hk/ma/" target="_blank">
-            City University of Hong Kong</a>,
-          with a minor in <strong>Computer Science</strong>.
-        </p>
-
-        <p class="research-statement">
-
-          My research focuses on <strong>inverse problems</strong> and <strong>scientific machine learning (SciML)</strong> for
-           complex dynamical systems, with an emphasis on learning hidden mechanisms 
-           from incomplete or indirect observations by exploiting mathematical and physical 
-           structure. I also work on the mathematical modeling and analysis of 
-           multiscale nonlinear systems, including interacting particle systems 
-           and PDEs, with applications in biophysics and materials science.
-          
-  
-        </p>
-
-        
-     
-
-      </div>
-
-
-      <div class="hero-photo">
-        <img
-          src="/images/profile.jpeg"
-          alt="Baoli Hao"
+      <div class="hero-socials">
+        <a
+          href="https://scholar.google.com/citations?hl=en&user=LBo6mLwAAAAJ"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          <iconify-icon icon="simple-icons:googlescholar"></iconify-icon>
+          <span>Google Scholar</span>
+        </a>
+
+        <span class="social-separator">|</span>
+
+        <a href="https://github.com/baolihao" target="_blank" rel="noopener noreferrer">
+          <iconify-icon icon="simple-icons:github"></iconify-icon>
+          <span>GitHub</span>
+        </a>
+
+        <span class="social-separator">|</span>
+
+        <a
+          href="https://www.linkedin.com/in/baolihao"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <iconify-icon icon="simple-icons:linkedin"></iconify-icon>
+          <span>LinkedIn</span>
+        </a>
+
+        <span class="social-separator">|</span>
+
+        <a href="mailto:bhao2@hawk.illinoistech.edu">
+          <iconify-icon icon="mdi:email"></iconify-icon>
+          <span>Email</span>
+        </a>
       </div>
-
-<div class="hero-socials">
-
-  <a
-    href="https://scholar.google.com/citations?hl=en&user=LBo6mLwAAAAJ"
-    target="_blank"
-    rel="noopener noreferrer">
-    <iconify-icon icon="simple-icons:googlescholar"></iconify-icon>
-    <span>Google Scholar</span>
-  </a>
-
-  <span class="social-separator">|</span>
-
-  <a
-    href="https://github.com/baolihao"
-    target="_blank"
-    rel="noopener noreferrer">
-    <iconify-icon icon="simple-icons:github"></iconify-icon>
-    <span>GitHub</span>
-  </a>
-
-  <span class="social-separator">|</span>
-
-  <a
-    href="https://www.linkedin.com/in/baolihao"
-    target="_blank"
-    rel="noopener noreferrer">
-    <iconify-icon icon="simple-icons:linkedin"></iconify-icon>
-    <span>LinkedIn</span>
-  </a>
-
-  <span class="social-separator">|</span>
-
-  <a href="mailto:bhao2@hawk.illinoistech.edu">
-    <iconify-icon icon="mdi:email"></iconify-icon>
-    <span>Email</span>
-  </a>
-
-</div>
-
-
     </div>
 
+    <div class="home-about-photo">
+      <img src="/images/profile.jpeg" alt="Baoli Hao">
+    </div>
   </div>
 </section>
   <!-- ==================== RESEARCH ==================== -->
@@ -597,6 +593,8 @@
     navLinks.classList.toggle("open");
   });
 </script>
+
+<script src="/js/collective-dynamics.js" defer></script>
 
 </body>
 
