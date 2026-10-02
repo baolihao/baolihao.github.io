@@ -8,8 +8,7 @@
   <title>Baoli Hao</title>
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 
-  <link rel="stylesheet" href="/css/main.css?v=6">
-  <link rel="preload" as="image" href="/images/home/ink-sardine-motion-v2.webp?v=2" type="image/webp">
+  <link rel="stylesheet" href="/css/main.css?v=7">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="shortcut icon" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
@@ -56,10 +55,21 @@
 
 <section class="hero hero-dynamics">
   <div class="container hero-stage">
-    <figure class="dynamics-figure" data-dynamics-figure>
-      <canvas id="collective-dynamics-canvas" aria-hidden="true"></canvas>
+    <figure class="dynamics-figure">
+      <video
+        id="home-hero-movie"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+        data-hero-movie
+      >
+        <source src="/images/home/fish-movie.mp4" type="video/mp4">
+      </video>
 
-      <div class="hero-overlay" data-dynamics-obstacle>
+      <div class="hero-overlay">
         <h1>Baoli Hao</h1>
 
         <p class="position">
@@ -71,9 +81,9 @@
       <button
         class="dynamics-toggle"
         type="button"
-        aria-label="Pause fish school animation"
+        aria-label="Pause goldfish movie"
         aria-pressed="false"
-        data-dynamics-toggle
+        data-movie-toggle
       >
         <span class="dynamics-toggle-icon" aria-hidden="true">Ⅱ</span>
       </button>
@@ -610,7 +620,7 @@
   });
 </script>
 
-<script src="/js/collective-dynamics.js?v=9" defer></script>
+<script src="/js/hero-movie.js?v=1" defer></script>
 
 </body>
 
